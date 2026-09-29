@@ -1,0 +1,80 @@
+﻿*
+*	Name:				Darbareh Fonts
+*	Version:			1.0
+*	Author:		        	Naser Khadem
+*	Created on:			May 2, 2026
+*	Updated on:			May 2, 2026
+*	Website:			http://fontiran.com
+*	Copyright:			Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت «درباره» یک نرم‌افزار مالکیتی محسوب می‌شود. جهت آگاهی از قوانین استفاده از این فونت‌ها لطفاً به وب‌سایت fontiran.com مراجعه نمایید.
+--------------------------------------------------------------------------------------
+Darbareh fonts are considered proprietary software. To learn about legal usage and licensing, please visit www.fontiran.com.
+--------------------------------------------------------------------------------------
+This set of fonts is used in this project under the license: (.....)
+-------------------------------------------------------------------------------------
+*/
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: 200;
+	src: url('fonts/woff2/darbarehWeb-ExtraLight.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: 300;
+	src: url('fonts/woff2/darbarehWeb-Light.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/woff2/darbarehWeb-Regular.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: 500;
+	src: url('fonts/woff2/darbarehWeb-Medium.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: 600;
+	src: url('fonts/woff2/darbarehWeb-SemiBold.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: bold;
+	src: url('fonts/woff2/darbarehWeb-Bold.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: 800;
+	src: url('fonts/woff2/darbarehWeb-ExtraBold.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: "DarbarehWeb";
+	font-style: normal;
+	font-weight: 900;
+	src: url('fonts/woff2/darbarehWeb-Black.woff2') format('woff2'),
+		 url('fonts/woff/darbarehWeb-Black.woff') format('woff');
+}
