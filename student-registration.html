@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ثبت‌نام دوره جامع هوش‌آرا از طریق نمایندگی">
+  <title>ثبت‌نام دوره هوش‌آرا | ثبت‌نام اختصاصی نمایندگی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="enrollment-page">
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="هوش‌آرا">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/logo/logo.png" alt="لوگو هوش‌آرا" width="32" height="32">
+      </span>
+      <span class="brand-text">
+        <strong>هوش‌آرا</strong>
+        <small>خانه هوش و استعداد لبیک</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="منوی اصلی">
+      <a href="index.html#about">معرفی دوره</a>
+      <a href="index.html#faq">سؤالات متداول</a>
+      <a href="#registration">ثبت‌نام</a>
+      <a class="nav-login" href="index.html">بازگشت به سایت</a>
+    </nav>
+  </div>
+</header>
+
+<main class="enrollment-main" id="registration">
+
+  <section class="enrollment-hero">
+    <div class="enrollment-hero-copy">
+      <span class="eyebrow">ثبت‌نام اختصاصی دوره</span>
+      <h1>قدم‌به‌قدم وارد مسیر <em>هوش‌آرا</em> شوید.</h1>
+      <p>
+        این فرم برای ثبت‌نام کودک در دوره جامع پرورش مهارت‌های شناختی هوش‌آرا طراحی شده است.
+        اطلاعات را مرحله‌به‌مرحله وارد کنید؛ در پایان همه موارد را یک‌جا بازبینی خواهید کرد.
+      </p>
+      <div class="enrollment-hero-meta">
+        <span class="enrollment-pill">کودکان ۴ تا ۶ سال</span>
+        <span class="enrollment-pill">دوره ده‌ماهه</span>
+        <span class="enrollment-pill" id="repCodePill">لینک اختصاصی نمایندگی</span>
+      </div>
+    </div>
+
+    <aside class="representative-info-card" aria-label="اطلاعات نمایندگی">
+      <span class="rep-card-label">این ثبت‌نام از طرف نمایندگی انجام می‌شود</span>
+      <h2 class="rep-card-name" id="repName">نمایندگی هوش‌آرا</h2>
+      <p class="rep-card-sub" id="repSubtitle">اطلاعات نمایندگی از لینک اختصاصی شما دریافت می‌شود.</p>
+
+      <div class="rep-card-details">
+        <div class="rep-detail"><b>شهر:</b><span id="repCity">—</span></div>
+        <div class="rep-detail"><b>برگزارکننده:</b><span id="repOrganizer">—</span></div>
+        <div class="rep-detail"><b>راه ارتباطی:</b><span id="repPhone">—</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="enrollment-disclaimer">
+    <strong>توجه مهم پیش از ثبت‌نام</strong>
+    <p>
+      دوره‌ای که از طریق این صفحه در آن ثبت‌نام می‌کنید، <b>توسط نمایندگی معرفی‌شده در بالای صفحه برگزار و پیگیری می‌شود</b>.
+      خانه هوش و استعداد لبیک صرفاً صاحب و ارائه‌دهنده محتوای دوره هوش‌آراست و این صفحه به‌معنای برگزاری دوره توسط لبیک نیست.
+      زمان‌بندی، محل برگزاری، ارتباط با خانواده، پشتیبانی اجرایی و پیگیری ثبت‌نام بر عهده نمایندگی برگزارکننده است.
+      لطفاً پیش از پرداخت، اطلاعات نمایندگی و شرایط اجرای دوره را بررسی کنید.
+    </p>
+  </section>
+
+  <section class="enrollment-shell" aria-label="فرم ثبت‌نام">
+    <div class="enrollment-progress">
+      <div class="enrollment-progress-top">
+        <span id="progressTitle">اطلاعات کودک</span>
+        <strong><span id="currentStep">۱</span> از ۸</strong>
+      </div>
+      <div class="enrollment-progress-bar">
+        <div class="enrollment-progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <form class="enrollment-card" id="enrollmentForm" novalidate>
+      <div class="enrollment-stage">
+
+        <section class="enrollment-slide is-active" data-step="1" data-title="اطلاعات کودک">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۱</span>
+            <h2>اول، <em>کودک</em> را بشناسیم.</h2>
+            <p class="enrollment-slide-description">
+              چند اطلاعات پایه که برای ثبت‌نام در دوره لازم است.
+            </p>
+          </div>
+
+          <div class="enrollment-grid">
+            <div class="enrollment-field full">
+              <label for="childName">نام و نام خانوادگی کودک <span>*</span></label>
+              <input id="childName" name="childName" type="text" placeholder="مثلاً علی رضایی" required>
+            </div>
+
+            <div class="enrollment-field">
+              <label for="birthDate">تاریخ تولد کودک <span>*</span></label>
+              <input id="birthDate" name="birthDate" type="text" inputmode="numeric" placeholder="مثلاً ۱۴۰۰/۰۵/۱۲" required>
+            </div>
+
+            <div class="enrollment-field">
+              <label for="childGender">جنسیت کودک <span>*</span></label>
+              <select id="childGender" name="childGender" required>
+                <option value="">انتخاب کنید</option>
+                <option>دختر</option>
+                <option>پسر</option>
+              </select>
+            </div>
+
+            <div class="enrollment-field full">
+              <label for="childNotes">نکته‌ای درباره کودک که لازم است مربی بداند</label>
+              <textarea id="childNotes" name="childNotes" placeholder="اختیاری؛ مثلاً علایق، ویژگی‌های رفتاری یا نکته‌ای که در روند آموزش کمک‌کننده است."></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="enrollment-slide" data-step="2" data-title="اطلاعات مادر">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۲</span>
+            <h2>حالا با <em>مادر</em> آشنا شویم.</h2>
+            <p class="enrollment-slide-description">
+              شماره همراه را با دقت وارد کنید؛ این شماره باید در ایتا فعال باشد.
+            </p>
+          </div>
+
+          <div class="enrollment-grid">
+            <div class="enrollment-field full">
+              <label for="motherName">نام و نام خانوادگی مادر <span>*</span></label>
+              <input id="motherName" name="motherName" type="text" placeholder="نام و نام خانوادگی" required>
+            </div>
+
+            <div class="enrollment-field">
+              <label for="motherMobile">شماره همراه مادر <span>*</span></label>
+              <input id="motherMobile" name="motherMobile" type="tel" inputmode="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷" required>
+            </div>
+
+            <div class="enrollment-field">
+              <label for="city">شهر محل سکونت <span>*</span></label>
+              <input id="city" name="city" type="text" placeholder="مثلاً مشهد" required>
+            </div>
+
+            <div class="enrollment-field">
+              <label for="motherEducation">تحصیلات مادر <span>*</span></label>
+              <select id="motherEducation" name="motherEducation" required>
+                <option value="">انتخاب کنید</option>
+                <option>دیپلم</option>
+                <option>کاردانی</option>
+                <option>کارشناسی</option>
+                <option>کارشناسی ارشد</option>
+                <option>دکتری</option>
+                <option>سایر</option>
+              </select>
+            </div>
+
+            <div class="enrollment-field">
+              <label for="motherJob">شغل مادر <span>*</span></label>
+              <input id="motherJob" name="motherJob" type="text" placeholder="مثلاً خانه‌دار، معلم، کارمند..." required>
+            </div>
+          </div>
+        </section>
+
+        <section class="enrollment-slide" data-step="3" data-title="هدف و همراهی خانواده">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۳</span>
+            <h2>از این مسیر چه <em>انتظاری</em> دارید؟</h2>
+            <p class="enrollment-slide-description">
+              پاسخ شما کمک می‌کند همراهی خانواده با هدف دوره هماهنگ‌تر باشد.
+            </p>
+          </div>
+
+          <div class="enrollment-grid">
+            <div class="enrollment-field full">
+              <label for="goal">هدف شما از شرکت در دوره چیست؟ <span>*</span></label>
+              <textarea id="goal" name="goal" placeholder="در چند جمله کوتاه بنویسید چه انتظاری از این دوره دارید." required></textarea>
+            </div>
+
+            <div class="enrollment-field full">
+              <label>در طول روز به‌طور میانگین چقدر برای بازی و فعالیت با کودک زمان اختصاص می‌دهید؟ <span>*</span></label>
+              <div class="enrollment-choice-grid">
+                <div class="enrollment-choice">
+                  <input id="time0" type="radio" name="dailyTime" value="نمی‌توانم وقت بگذارم" required>
+                  <label for="time0"><strong>کمتر</strong><small>نمی‌توانم وقت بگذارم</small></label>
+                </div>
+                <div class="enrollment-choice">
+                  <input id="time30" type="radio" name="dailyTime" value="۳۰ دقیقه">
+                  <label for="time30"><strong>۳۰ دقیقه</strong><small>در طول روز</small></label>
+                </div>
+                <div class="enrollment-choice">
+                  <input id="time60" type="radio" name="dailyTime" value="یک ساعت">
+                  <label for="time60"><strong>یک ساعت</strong><small>در طول روز</small></label>
+                </div>
+                <div class="enrollment-choice">
+                  <input id="time120" type="radio" name="dailyTime" value="دو ساعت">
+                  <label for="time120"><strong>دو ساعت</strong><small>در طول روز</small></label>
+                </div>
+                <div class="enrollment-choice">
+                  <input id="time180" type="radio" name="dailyTime" value="سه ساعت">
+                  <label for="time180"><strong>سه ساعت</strong><small>در طول روز</small></label>
+                </div>
+                <div class="enrollment-choice">
+                  <input id="timeMore" type="radio" name="dailyTime" value="بیش از سه ساعت">
+                  <label for="timeMore"><strong>بیش از ۳ ساعت</strong><small>در طول روز</small></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="enrollment-slide" data-step="4" data-title="تجربه قبلی">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۴</span>
+            <h2>تجربه‌ای از <em>دوره‌های مشابه</em> دارید؟</h2>
+            <p class="enrollment-slide-description">
+              این بخش اجباری نیست؛ اگر تجربه‌ای دارید، کوتاه و واقعی برای ما بنویسید.
+            </p>
+          </div>
+
+          <div class="enrollment-grid">
+            <div class="enrollment-field full">
+              <label for="previousCourse">چنانچه تاکنون در دوره‌های مرتبط با پرورش هوش کودک شرکت کرده‌اید، توضیح مختصری بنویسید.</label>
+              <textarea id="previousCourse" name="previousCourse" placeholder="نوع دوره، مدت یا بازخوردی که از آن گرفتید..."></textarea>
+            </div>
+
+            <div class="enrollment-field full">
+              <label for="learningExpectation">اگر تجربه قبلی داشته‌اید، این دوره چه تفاوتی برایتان مهم است؟</label>
+              <textarea id="learningExpectation" name="learningExpectation" placeholder="اختیاری"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="enrollment-slide" data-step="5" data-title="انتخاب شیوه دوره">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۵</span>
+            <h2>کدام مسیر برای <em>شما</em>ست؟</h2>
+            <p class="enrollment-slide-description">
+              بر اساس توضیحات دوره، شیوه‌ای را انتخاب کنید که نمایندگی برگزارکننده برای شما ارائه می‌کند.
+            </p>
+          </div>
+
+          <div class="enrollment-section-note">
+            دوره جامع هوش‌آرا برای کودکان ۴ تا ۶ ساله طراحی شده است. اجرای حضوری شامل ۳۰ کارگاه کودک و ۶۰ فعالیت مادر و کودک در ده ماه است؛ نسخه مجازی شامل ۶۰ فعالیت مادر و کودک است.
+          </div>
+
+          <div class="course-option-grid">
+            <div class="course-option">
+              <input id="courseInPerson" type="radio" name="courseType" value="حضوری" required>
+              <label for="courseInPerson">
+                <strong>دوره حضوری</strong>
+                <small>۳۰ کارگاه حضوری کودک + ۶۰ فعالیت مادر و کودک در بازه ده‌ماهه</small>
+                <span class="course-price">۶٬۸۰۰٬۰۰۰ تومان</span>
+              </label>
+            </div>
+
+            <div class="course-option">
+              <input id="courseOnline" type="radio" name="courseType" value="مجازی">
+              <label for="courseOnline">
+                <strong>دوره مجازی</strong>
+                <small>۶۰ فعالیت مادر و کودک در قالب بسته‌های آموزشی</small>
+                <span class="course-price">۲٬۰۰۰٬۰۰۰ تومان</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="enrollment-slide" data-step="6" data-title="تأیید شرایط">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۶</span>
+            <h2>قبل از پرداخت، <em>این چند نکته</em> را بخوانید.</h2>
+            <p class="enrollment-slide-description">
+              هدف این مرحله این است که ثبت‌نام با آگاهی کامل انجام شود.
+            </p>
+          </div>
+
+          <div class="enrollment-section-note">
+            تهیه وسایل مصرفی دوره بر عهده خانه هوش و استعداد است و وسایل شخصی مانند مدادرنگی، دفتر، خمیر و موارد مشابه توسط والدین تأمین می‌شود.
+          </div>
+
+          <div class="enrollment-grid">
+            <div class="enrollment-field full">
+              <label>موارد زیر را مطالعه کرده‌ام و می‌پذیرم <span>*</span></label>
+              <div class="review-grid">
+                <label class="checkbox-row">
+                  <input id="acceptOrganizer" name="acceptOrganizer" type="checkbox" required>
+                  <span>می‌دانم دوره از طرف <b id="acceptOrganizerName">نمایندگی برگزارکننده</b> برگزار و پیگیری می‌شود، نه مستقیماً توسط لبیک.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input id="acceptDetails" name="acceptDetails" type="checkbox" required>
+                  <span>جزئیات زمان، مکان، پشتیبانی و اجرای دوره را از نمایندگی دریافت و بررسی کرده‌ام.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input id="acceptAge" name="acceptAge" type="checkbox" required>
+                  <span>کودک ثبت‌نام‌شده در بازه سنی اعلام‌شده دوره قرار دارد.</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="enrollment-slide" data-step="7" data-title="بازبینی اطلاعات">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۷</span>
+            <h2>یک بار دیگر، <em>همه‌چیز را ببینید.</em></h2>
+            <p class="enrollment-slide-description">
+              اگر هر بخش نیاز به اصلاح دارد، از همین‌جا به همان مرحله برگردید.
+            </p>
+          </div>
+
+          <div class="review-grid" id="reviewContainer"></div>
+          <div class="review-warning" id="reviewWarning">
+            هنوز بعضی از اطلاعات اجباری تکمیل نشده‌اند. از دکمه‌های «اصلاح» استفاده کنید تا به همان مرحله برگردید.
+          </div>
+
+          <label class="checkbox-row" style="margin-top:15px;">
+            <input id="confirmReview" name="confirmReview" type="checkbox" required>
+            <span>اطلاعات بالا را بازبینی کردم و برای رفتن به مرحله پرداخت آماده‌ام.</span>
+          </label>
+        </section>
+
+        <section class="enrollment-slide" data-step="8" data-title="پرداخت و تکمیل ثبت‌نام">
+          <div class="enrollment-slide-header">
+            <span class="enrollment-step-number">۰۸</span>
+            <h2>رسیدیم به <em>مرحله آخر.</em></h2>
+            <p class="enrollment-slide-description">
+              مبلغ دوره انتخابی را بررسی کنید و ثبت‌نام را تکمیل کنید.
+            </p>
+          </div>
+
+          <div class="payment-box">
+            <h3>خلاصه پرداخت</h3>
+            <p>مبلغ زیر بر اساس انتخاب شما در مرحله قبل نمایش داده می‌شود.</p>
+
+            <div class="payment-price">
+              <span id="paymentCourseName">دوره حضوری</span>
+              <strong id="paymentAmount">۶٬۸۰۰٬۰۰۰ تومان</strong>
+            </div>
+
+            <div class="payment-method-note">
+              در این نسخه، درگاه پرداخت واقعی متصل نیست. برای نسخه نهایی می‌توان دکمه زیر را به درگاه پرداخت نمایندگی یا سامانه مالی متصل کرد.
+            </div>
+          </div>
+
+          <label class="checkbox-row" style="margin-top:18px;">
+            <input id="confirmPayment" name="confirmPayment" type="checkbox" required>
+            <span>اطلاعات نهایی و مبلغ دوره را بررسی کرده‌ام و برای پرداخت و تکمیل ثبت‌نام اقدام می‌کنم.</span>
+          </label>
+        </section>
+
+      </div>
+
+      <div class="enrollment-actions" id="enrollmentActions">
+        <span class="enrollment-helper">فیلدهای دارای <b>*</b> الزامی هستند.</span>
+        <div class="enrollment-actions-right">
+          <button class="btn btn-ghost" id="backButton" type="button" hidden>مرحله قبل</button>
+          <button class="btn btn-primary" id="nextButton" type="button">مرحله بعد <span>←</span></button>
+        </div>
+      </div>
+
+      <div class="enrollment-success" id="enrollmentSuccess">
+        <div class="enrollment-success-icon">✓</div>
+        <h2>اطلاعات شما با موفقیت ثبت شد.</h2>
+        <p>
+          اطلاعات شما با موفقیت ثبت شد و پنل شما در سایت فعال است. شروع دوره توسط پیامک به شما اطلاع‌رسانی خواهد شد.
+        </p>
+        <div class="enrollment-success-actions">
+          <button class="btn btn-ghost" id="restartButton" type="button">بازگشت و اصلاح اطلاعات</button>
+          <a class="btn btn-primary" id="panelButton" href="panel.html">ورود به پنل کاربری</a>
+        </div>
+      </div>
+    </form>
+
+    <p class="enrollment-final-note">
+      این صفحه مخصوص ثبت‌نام از طریق لینک اختصاصی نمایندگی است. مسئولیت اجرای دوره و پاسخ‌گویی اجرایی با نمایندگی برگزارکننده است.
+    </p>
+  </section>
+
+  <footer class="enrollment-footer">
+    <span>دوره جامع پرورش مهارت‌های شناختی هوش‌آرا</span>
+    <span>خانه هوش و استعداد لبیک — ارائه‌دهنده محتوای دوره</span>
+  </footer>
+</main>
+
+<script>
+(() => {
+  /*
+    نمونه ساختار لینک:
+    student-registration.html?rep=labbaik-mashhad-01
+
+    برای هر نمایندگی، یک کد یکتا بسازید و اطلاعات آن را در representativeMap وارد کنید.
+    در نسخه دارای بک‌اند، همین داده‌ها باید از سرور خوانده شوند.
+  */
+  const representativeMap = {
+    "labbaik-mashhad-01": {
+      name: "نمایندگی هوش‌آرا مشهد",
+      city: "مشهد",
+      organizer: "مجموعه نمونه برگزارکننده",
+      phone: "۰۹۱۲۱۲۳۴۵۶۷",
+      code: "labbaik-mashhad-01"
+    },
+    "sample-02": {
+      name: "نمایندگی نمونه شماره ۲",
+      city: "مشهد",
+      organizer: "نام مجموعه برگزارکننده",
+      phone: "۰۹۱۲۱۲۳۴۵۶۷",
+      code: "sample-02"
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const repCode = params.get("rep") || "labbaik-mashhad-01";
+  const representative = representativeMap[repCode] || representativeMap["labbaik-mashhad-01"];
+
+  document.getElementById("repName").textContent = representative.name;
+  document.getElementById("repCity").textContent = representative.city;
+  document.getElementById("repOrganizer").textContent = representative.organizer;
+  document.getElementById("repPhone").textContent = representative.phone;
+  document.getElementById("repCodePill").textContent = "کد نمایندگی: " + representative.code;
+  document.getElementById("acceptOrganizerName").textContent = representative.organizer;
+
+  // مقادیر نمونه برای بررسی ظاهری مرحله بازبینی در این نسخه.
+  // در نسخه نهایی می‌توان این بخش را حذف کرد تا فرم از ابتدا خالی باشد.
+  const demoValues = {
+    childName: "علی رضایی",
+    birthDate: "۱۴۰۰/۰۵/۱۲",
+    childGender: "پسر",
+    childNotes: "به فعالیت‌های ساختنی و بازی‌های فکری علاقه دارد.",
+    motherName: "مریم رضایی",
+    motherMobile: "۰۹۱۲۱۲۳۴۵۶۷",
+    city: "مشهد",
+    motherEducation: "کارشناسی",
+    motherJob: "معلم",
+    goal: "تقویت مهارت‌های شناختی و افزایش تمرکز کودک.",
+    dailyTime: "یک ساعت",
+    previousCourse: "در یک دوره بازی و خلاقیت کودک شرکت کرده‌ایم.",
+    learningExpectation: "فعالیت‌های کاربردی و قابل اجرا در خانه برایمان مهم است.",
+    courseType: "حضوری"
+  };
+
+  Object.entries(demoValues).forEach(([id, value]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.type === "radio") {
+      const option = document.querySelector(`input[name="${el.name}"][value="${value}"]`);
+      if (option) option.checked = true;
+    } else {
+      el.value = value;
+    }
+  });
+
+  ["dailyTime", "courseType"].forEach(name => {
+    const option = document.querySelector(`input[name="${name}"][value="${demoValues[name]}"]`);
+    if (option) option.checked = true;
+  });
+
+  ["acceptOrganizer", "acceptDetails", "acceptAge"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.checked = true;
+  });
+
+  const form = document.getElementById("enrollmentForm");
+  const slides = [...document.querySelectorAll(".enrollment-slide")];
+  const progressFill = document.getElementById("progressFill");
+  const progressTitle = document.getElementById("progressTitle");
+  const currentStep = document.getElementById("currentStep");
+  const nextButton = document.getElementById("nextButton");
+  const backButton = document.getElementById("backButton");
+  const actions = document.getElementById("enrollmentActions");
+  const success = document.getElementById("enrollmentSuccess");
+  const restartButton = document.getElementById("restartButton");
+  const reviewContainer = document.getElementById("reviewContainer");
+  const reviewWarning = document.getElementById("reviewWarning");
+  const paymentCourseName = document.getElementById("paymentCourseName");
+  const paymentAmount = document.getElementById("paymentAmount");
+
+  const digits = value => String(value).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+
+  let current = 0;
+
+  const field = id => document.getElementById(id);
+
+  const sections = [
+    {
+      title: "اطلاعات کودک",
+      step: 1,
+      items: [
+        ["نام کودک", "childName"],
+        ["تاریخ تولد", "birthDate"],
+        ["جنسیت", "childGender"],
+        ["توضیحات کودک", "childNotes"]
+      ]
+    },
+    {
+      title: "اطلاعات مادر",
+      step: 2,
+      items: [
+        ["نام مادر", "motherName"],
+        ["شماره همراه", "motherMobile"],
+        ["شهر", "city"],
+        ["تحصیلات", "motherEducation"],
+        ["شغل", "motherJob"]
+      ]
+    },
+    {
+      title: "هدف و همراهی خانواده",
+      step: 3,
+      items: [
+        ["هدف از شرکت", "goal"],
+        ["زمان روزانه", "dailyTime"]
+      ]
+    },
+    {
+      title: "تجربه قبلی",
+      step: 4,
+      items: [
+        ["دوره مرتبط قبلی", "previousCourse"],
+        ["انتظار از این دوره", "learningExpectation"]
+      ]
+    },
+    {
+      title: "شیوه دوره",
+      step: 5,
+      items: [
+        ["نوع دوره", "courseType"]
+      ]
+    },
+    {
+      title: "تأیید شرایط دوره",
+      step: 6,
+      items: [
+        ["برگزاری توسط نمایندگی", "acceptOrganizer"],
+        ["بررسی جزئیات اجرا و پشتیبانی", "acceptDetails"],
+        ["قرار داشتن کودک در بازه سنی دوره", "acceptAge"]
+      ]
+    }
+  ];
+
+  function getValue(id) {
+    const el = field(id);
+    if (!el) return "—";
+
+    if (el.type === "radio") {
+      const checked = document.querySelector(`input[name="${el.name}"]:checked`);
+      return checked ? checked.value : "—";
+    }
+
+    if (el.type === "checkbox") {
+      return el.checked ? "تأیید شد" : "تأیید نشده";
+    }
+
+    if (el.tagName === "SELECT") {
+      return el.value || "—";
+    }
+
+    return el.value.trim() || "—";
+  }
+
+  function getGroupValue(name) {
+    const checked = document.querySelector(`input[name="${name}"]:checked`);
+    return checked ? checked.value : "—";
+  }
+
+  function renderReview() {
+    reviewContainer.innerHTML = "";
+
+    sections.forEach(section => {
+      const block = document.createElement("div");
+      block.className = "review-block";
+
+      const head = document.createElement("div");
+      head.className = "review-block-head";
+      head.innerHTML = `<strong>${section.title}</strong><button type="button" class="review-edit" data-step="${section.step}">اصلاح این بخش ←</button>`;
+
+      const items = document.createElement("div");
+      items.className = "review-items";
+
+      section.items.forEach(([label, id]) => {
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let value = getValue(id);
+        if (id === "dailyTime") value = getGroupValue("dailyTime");
+        if (id === "courseType") value = getGroupValue("courseType");
+
+        item.innerHTML = `<span>${label}</span><strong>${escapeHtml(value)}</strong>`;
+        items.appendChild(item);
+      });
+
+      block.appendChild(head);
+      block.appendChild(items);
+      reviewContainer.appendChild(block);
+    });
+
+    document.querySelectorAll(".review-edit").forEach(btn => {
+      btn.addEventListener("click", () => {
+        setStep(Number(btn.dataset.step) - 1, "back");
+      });
+    });
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function validateCurrent() {
+    const currentSlide = slides[current];
+    const required = [...currentSlide.querySelectorAll("[required]")];
+
+    for (const element of required) {
+      if (!element.checkValidity()) {
+        element.reportValidity();
+        element.focus({ preventScroll: true });
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function setStep(next, direction = "forward") {
+    slides[current].classList.remove("is-active");
+    current = next;
+    slides[current].classList.add("is-active");
+
+    const step = current + 1;
+    currentStep.textContent = digits(step);
+    progressTitle.textContent = slides[current].dataset.title;
+    progressFill.style.width = `${(step / slides.length) * 100}%`;
+
+    backButton.hidden = current === 0;
+
+    if (current === slides.length - 1) {
+      renderReview();
+      nextButton.innerHTML = 'ثبت و ادامه <span>✓</span>';
+    } else if (current === slides.length - 2) {
+      nextButton.innerHTML = 'رفتن به پرداخت <span>←</span>';
+    } else {
+      nextButton.innerHTML = 'مرحله بعد <span>←</span>';
+    }
+
+    if (current === 7) updatePayment();
+
+    requestAnimationFrame(() => {
+      const first = slides[current].querySelector(
+        "input:not([type='radio']):not([type='checkbox']), select, textarea"
+      );
+      if (first) first.focus({ preventScroll: true });
+    });
+
+  }
+
+  function updatePayment() {
+    const course = getGroupValue("courseType");
+
+    if (course === "مجازی") {
+      paymentCourseName.textContent = "دوره مجازی";
+      paymentAmount.textContent = "۲٬۰۰۰٬۰۰۰ تومان";
+    } else {
+      paymentCourseName.textContent = "دوره حضوری";
+      paymentAmount.textContent = "۶٬۸۰۰٬۰۰۰ تومان";
+    }
+  }
+
+  nextButton.addEventListener("click", () => {
+    if (!validateCurrent()) return;
+
+    if (current === 5) {
+      setStep(6);
+      return;
+    }
+
+    if (current === 6) {
+      if (!field("confirmReview").checked) {
+        reviewWarning.classList.add("is-visible");
+        field("confirmReview").reportValidity();
+        return;
+      }
+      reviewWarning.classList.remove("is-visible");
+      setStep(7);
+      updatePayment();
+      return;
+    }
+
+    if (current === 7) {
+      if (!field("confirmPayment").checked) return;
+      success.classList.add("is-visible");
+      document.querySelector(".enrollment-stage").style.display = "none";
+      actions.style.display = "none";
+      progressFill.style.width = "100%";
+      progressTitle.textContent = "تکمیل ثبت‌نام";
+      currentStep.textContent = "✓";
+      return;
+    }
+
+    setStep(current + 1);
+  });
+
+  backButton.addEventListener("click", () => {
+    if (current > 0) setStep(current - 1, "back");
+  });
+
+  restartButton.addEventListener("click", () => {
+    success.classList.remove("is-visible");
+    document.querySelector(".enrollment-stage").style.display = "";
+    actions.style.display = "";
+    form.reset();
+    current = 0;
+    slides.forEach((slide, index) => slide.classList.toggle("is-active", index === 0));
+    currentStep.textContent = "۱";
+    progressTitle.textContent = slides[0].dataset.title;
+    progressFill.style.width = `${100 / slides.length}%`;
+    backButton.hidden = true;
+    nextButton.innerHTML = 'مرحله بعد <span>←</span>';
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  navToggle?.addEventListener("click", () => {
+    const open = mainNav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(open));
+  });
+
+  mainNav?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("is-open");
+      navToggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  form.addEventListener("keydown", event => {
+    if (event.key === "Enter" && event.target.tagName !== "TEXTAREA") {
+      event.preventDefault();
+      nextButton.click();
+    }
+  });
+
+  document.querySelectorAll('input[name="courseType"]').forEach(input => {
+    input.addEventListener("change", updatePayment);
+  });
+
+  document.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener("input", () => {
+      if (input.checkValidity()) input.removeAttribute("aria-invalid");
+    });
+  });
+})();
+</script>
+</body>
+</html>

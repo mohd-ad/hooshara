@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فرم درخواست نمایندگی هوش‌آرا">
+  <title>ثبت نمایندگی | هوش‌آرا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="representative-page">
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="بازگشت به هوش‌آرا">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/logo/logo.png" alt="لوگو هوش‌آرا" width="32" height="32">
+        </span>
+        <span class="brand-text">
+          <strong>هوش‌آرا</strong>
+          <small>خانه هوش و استعداد لبیک</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="منوی اصلی">
+        <a href="index.html#about">معرفی دوره</a>
+        <a href="index.html#faq">سؤالات متداول</a>
+        <a href="index.html#representative">نمایندگی</a>
+        <a class="nav-login" href="index.html#register">ورود / عضویت</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="representative-form-main">
+    <div class="representative-intro">
+      <span class="eyebrow">فرم درخواست نمایندگی</span>
+      <h1>همراه <em>هوش‌آرا</em> شوید.</h1>
+      <p>
+        برای آشنایی بهتر با شما و مجموعه‌تان، چند پرسش کوتاه را پاسخ دهید.
+        تکمیل فرم حدود چند دقیقه زمان می‌برد.
+      </p>
+    </div>
+
+    <section class="representative-form-shell" aria-label="فرم درخواست نمایندگی">
+
+      <div class="form-progress" aria-label="پیشرفت فرم">
+        <div class="form-progress-top">
+          <span id="progressTitle">اطلاعات متقاضی</span>
+          <strong><span id="currentStep">۱</span> از ۷</strong>
+        </div>
+        <div class="form-progress-bar">
+          <div class="form-progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <form class="representative-form-card" id="representativeForm" novalidate>
+
+        <div class="form-stage">
+
+          <section class="form-slide is-active" data-step="1" data-title="اطلاعات متقاضی">
+            <div class="form-slide-header">
+              <span class="form-step-number">۰۱</span>
+              <h2>اول از همه، <em>شما</em> را بشناسیم.</h2>
+              <p class="form-slide-description">
+                اطلاعات تماس و مشخصات اولیه خود را وارد کنید تا بتوانیم با شما در ارتباط باشیم.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="fullName">نام و نام خانوادگی <span>*</span></label>
+                <input id="fullName" name="fullName" type="text" placeholder="مثلاً محمد احمدی" required>
+              </div>
+
+              <div class="form-field">
+                <label for="mobile">شماره موبایل <span>*</span></label>
+                <input id="mobile" name="mobile" type="tel" inputmode="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷" required>
+              </div>
+
+              <div class="form-field">
+                <label for="nationalId">کد ملی</label>
+                <input id="nationalId" name="nationalId" type="text" inputmode="numeric" placeholder="اختیاری">
+              </div>
+
+              <div class="form-field">
+                <label for="occupation">شغل / سمت فعلی</label>
+                <input id="occupation" name="occupation" type="text" placeholder="مثلاً مدیر آموزشگاه">
+              </div>
+
+              <div class="form-field">
+                <label for="province">استان <span>*</span></label>
+                <input id="province" name="province" type="text" placeholder="مثلاً خراسان رضوی" required>
+              </div>
+
+              <div class="form-field">
+                <label for="city">شهر <span>*</span></label>
+                <input id="city" name="city" type="text" placeholder="مثلاً مشهد" required>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-slide" data-step="2" data-title="اطلاعات مجموعه">
+            <div class="form-slide-header">
+              <span class="form-step-number">۰۲</span>
+              <h2>از <em>مجموعه</em> شما بیشتر بدانیم.</h2>
+              <p class="form-slide-description">
+                اگر مجموعه آموزشی دارید، اطلاعات پایه آن را وارد کنید.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="organizationName">نام مجموعه <span>*</span></label>
+                <input id="organizationName" name="organizationName" type="text" placeholder="نام مجموعه یا آموزشگاه" required>
+              </div>
+
+              <div class="form-field">
+                <label for="managerName">نام مدیر / مسئول</label>
+                <input id="managerName" name="managerName" type="text" placeholder="نام و نام خانوادگی">
+              </div>
+
+              <div class="form-field full">
+                <label>نوع مجموعه <span>*</span></label>
+                <div class="choice-grid">
+                  <div class="choice-card">
+                    <input id="typeKindergarten" type="radio" name="organizationType" value="مهدکودک" required>
+                    <label for="typeKindergarten"><strong>مهدکودک</strong><small>پیش‌دبستانی و کودک</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="typeSchool" type="radio" name="organizationType" value="دبستان">
+                    <label for="typeSchool"><strong>دبستان</strong><small>مدرسه و مرکز آموزشی</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="typeInstitute" type="radio" name="organizationType" value="آموزشگاه">
+                    <label for="typeInstitute"><strong>آموزشگاه</strong><small>مؤسسه آموزشی</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="typeCultural" type="radio" name="organizationType" value="مجموعه فرهنگی">
+                    <label for="typeCultural"><strong>مجموعه فرهنگی</strong><small>فرهنگی و تربیتی</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="typePrivate" type="radio" name="organizationType" value="مجموعه خصوصی">
+                    <label for="typePrivate"><strong>مجموعه خصوصی</strong><small>مرکز مستقل</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="typeOther" type="radio" name="organizationType" value="سایر">
+                    <label for="typeOther"><strong>سایر</strong><small>نوع دیگری از مجموعه</small></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-field full">
+                <label for="address">آدرس مجموعه</label>
+                <textarea id="address" name="address" placeholder="آدرس کامل مجموعه"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-slide" data-step="3" data-title="سابقه فعالیت">
+            <div class="form-slide-header">
+              <span class="form-step-number">۰۳</span>
+              <h2>تجربه شما در <em>آموزش</em> چقدر است؟</h2>
+              <p class="form-slide-description">
+                سابقه فعالیت شما کمک می‌کند تصویر دقیق‌تری از ظرفیت همکاری داشته باشیم.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="experience">سابقه فعالیت آموزشی</label>
+                <select id="experience" name="experience">
+                  <option value="">انتخاب کنید</option>
+                  <option>کمتر از ۱ سال</option>
+                  <option>۱ تا ۳ سال</option>
+                  <option>۳ تا ۵ سال</option>
+                  <option>بیشتر از ۵ سال</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="childrenExperience">تجربه کار با کودکان</label>
+                <select id="childrenExperience" name="childrenExperience">
+                  <option value="">انتخاب کنید</option>
+                  <option>ندارم</option>
+                  <option>کمتر از ۱ سال</option>
+                  <option>۱ تا ۳ سال</option>
+                  <option>بیشتر از ۳ سال</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="previousCourses">سابقه تدریس یا برگزاری دوره مشابه</label>
+                <textarea id="previousCourses" name="previousCourses" placeholder="اگر تجربه‌ای دارید، کوتاه توضیح دهید."></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="specialty">تخصص یا مدرک مرتبط</label>
+                <input id="specialty" name="specialty" type="text" placeholder="مثلاً علوم تربیتی">
+              </div>
+
+              <div class="form-field">
+                <label for="website">وب‌سایت یا شبکه اجتماعی</label>
+                <input id="website" name="website" type="text" placeholder="در صورت وجود">
+              </div>
+            </div>
+          </section>
+
+          <section class="form-slide" data-step="4" data-title="امکانات مجموعه">
+            <div class="form-slide-header">
+              <span class="form-step-number">۰۴</span>
+              <h2>مجموعه شما چه <em>امکاناتی</em> دارد؟</h2>
+              <p class="form-slide-description">
+                چند سؤال کوتاه درباره فضای اجرا و امکانات در اختیار شما.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="classCapacity">ظرفیت تقریبی هر کلاس</label>
+                <select id="classCapacity" name="classCapacity">
+                  <option value="">انتخاب کنید</option>
+                  <option>کمتر از ۱۰ نفر</option>
+                  <option>۱۰ تا ۱۵ نفر</option>
+                  <option>۱۶ تا ۲۵ نفر</option>
+                  <option>بیشتر از ۲۵ نفر</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="space">فضای مناسب برگزاری</label>
+                <select id="space" name="space">
+                  <option value="">انتخاب کنید</option>
+                  <option>دارم</option>
+                  <option>در حال آماده‌سازی</option>
+                  <option>فعلاً ندارم</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label>نحوه برگزاری موردنظر</label>
+                <div class="choice-grid">
+                  <div class="choice-card">
+                    <input id="inPerson" type="radio" name="delivery" value="حضوری">
+                    <label for="inPerson"><strong>حضوری</strong><small>در مجموعه</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="online" type="radio" name="delivery" value="آنلاین">
+                    <label for="online"><strong>آنلاین</strong><small>از راه دور</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="both" type="radio" name="delivery" value="حضوری و آنلاین">
+                    <label for="both"><strong>هر دو</strong><small>حضوری و آنلاین</small></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-field full">
+                <label>امکانات موجود</label>
+                <div class="choice-grid">
+                  <div class="choice-card">
+                    <input id="equipmentInternet" type="checkbox" name="equipment" value="اینترنت">
+                    <label for="equipmentInternet"><strong>اینترنت</strong><small>دسترسی مناسب</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="equipmentLaptop" type="checkbox" name="equipment" value="لپ‌تاپ یا کامپیوتر">
+                    <label for="equipmentLaptop"><strong>لپ‌تاپ / کامپیوتر</strong><small>برای اجرا</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="equipmentAV" type="checkbox" name="equipment" value="تجهیزات صوتی تصویری">
+                    <label for="equipmentAV"><strong>صوتی و تصویری</strong><small>نمایش و پخش</small></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-slide" data-step="5" data-title="هدف همکاری">
+            <div class="form-slide-header">
+              <span class="form-step-number">۰۵</span>
+              <h2>چرا می‌خواهید با <em>هوش‌آرا</em> همراه شوید؟</h2>
+              <p class="form-slide-description">
+                هدف و انگیزه شما از دریافت نمایندگی را با ما در میان بگذارید.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field full">
+                <label for="reason">دلیل اصلی درخواست نمایندگی <span>*</span></label>
+                <textarea id="reason" name="reason" placeholder="مثلاً توسعه فعالیت آموزشی مجموعه..." required></textarea>
+              </div>
+
+              <div class="form-field full">
+                <label>هدف شما از همکاری</label>
+                <div class="choice-grid">
+                  <div class="choice-card">
+                    <input id="goalExpand" type="checkbox" name="goals" value="توسعه فعالیت آموزشی">
+                    <label for="goalExpand"><strong>توسعه آموزشی</strong><small>گسترش فعالیت</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="goalNew" type="checkbox" name="goals" value="راه‌اندازی مرکز جدید">
+                    <label for="goalNew"><strong>مرکز جدید</strong><small>راه‌اندازی مجموعه</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="goalCurrent" type="checkbox" name="goals" value="استفاده در مجموعه فعلی">
+                    <label for="goalCurrent"><strong>مجموعه فعلی</strong><small>افزودن دوره</small></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-field full">
+                <label for="otherGoal">توضیحات تکمیلی</label>
+                <textarea id="otherGoal" name="otherGoal" placeholder="هر نکته‌ای که فکر می‌کنید دانستن آن برای ما مفید است."></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-slide" data-step="6" data-title="محدوده فعالیت">
+            <div class="form-slide-header">
+              <span class="form-step-number">۰۶</span>
+              <h2>نمایندگی را در چه <em>محدوده‌ای</em> می‌خواهید؟</h2>
+              <p class="form-slide-description">
+                محدوده‌ای که قصد دارید فعالیت هوش‌آرا را در آن دنبال کنید مشخص کنید.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="activityProvince">استان فعالیت <span>*</span></label>
+                <input id="activityProvince" name="activityProvince" type="text" placeholder="استان" required>
+              </div>
+
+              <div class="form-field">
+                <label for="activityCity">شهر فعالیت <span>*</span></label>
+                <input id="activityCity" name="activityCity" type="text" placeholder="شهر" required>
+              </div>
+
+              <div class="form-field full">
+                <label for="activityArea">منطقه / محله پیشنهادی</label>
+                <input id="activityArea" name="activityArea" type="text" placeholder="در صورت تمایل، منطقه یا محله را بنویسید.">
+              </div>
+
+              <div class="form-field full">
+                <label>آیا در این شهر مجموعه آموزشی فعال دارید؟</label>
+                <div class="choice-grid">
+                  <div class="choice-card">
+                    <input id="hasCenterYes" type="radio" name="hasCenter" value="بله">
+                    <label for="hasCenterYes"><strong>بله</strong><small>مجموعه فعال دارم</small></label>
+                  </div>
+                  <div class="choice-card">
+                    <input id="hasCenterNo" type="radio" name="hasCenter" value="خیر">
+                    <label for="hasCenterNo"><strong>خیر</strong><small>هنوز مجموعه ندارم</small></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-field full">
+                <label for="activityScope">توضیح کوتاه درباره محدوده فعالیت</label>
+                <textarea id="activityScope" name="activityScope" placeholder="اگر نکته‌ای درباره محدوده فعالیت وجود دارد، اینجا بنویسید."></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-slide" data-step="7" data-title="بازبینی و ارسال">
+            <div class="form-slide-header">
+              <span class="form-step-number">۰۷</span>
+              <h2>تقریباً تمام شد؛ <em>مرور نهایی</em></h2>
+              <p class="form-slide-description">
+                اطلاعات را بررسی کنید و در صورت صحت، درخواست خود را ثبت کنید.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="source">چطور با هوش‌آرا آشنا شدید؟</label>
+                <select id="source" name="source">
+                  <option value="">انتخاب کنید</option>
+                  <option>معرفی دوستان و آشنایان</option>
+                  <option>شبکه‌های اجتماعی</option>
+                  <option>جست‌وجو در اینترنت</option>
+                  <option>از طریق یک مجموعه آموزشی</option>
+                  <option>سایر</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="contactTime">زمان مناسب برای تماس</label>
+                <select id="contactTime" name="contactTime">
+                  <option value="">انتخاب کنید</option>
+                  <option>صبح</option>
+                  <option>ظهر</option>
+                  <option>عصر</option>
+                  <option>فرقی ندارد</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="finalNote">یادداشت پایانی</label>
+                <textarea id="finalNote" name="finalNote" placeholder="اگر نکته یا توضیح دیگری دارید..."></textarea>
+              </div>
+            </div>
+
+            <label class="checkbox-row">
+              <input id="confirmInfo" name="confirmInfo" type="checkbox" required>
+              <span>اطلاعات واردشده را بررسی کرده‌ام و صحت آن‌ها را تأیید می‌کنم.</span>
+            </label>
+          </section>
+
+        </div>
+
+        <div class="form-actions" id="formActions">
+          <span class="form-helper">فیلدهای دارای <b>*</b> الزامی هستند.</span>
+          <div class="form-actions-right">
+            <button class="btn form-back" id="backButton" type="button" hidden>مرحله قبل</button>
+            <button class="btn btn-primary form-next" id="nextButton" type="button">مرحله بعد <span>←</span></button>
+          </div>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✓</div>
+          <h2>درخواست شما آماده شد.</h2>
+          <p>
+            این نسخه از فرم صرفاً فرانت‌اند است؛ بنابراین اطلاعات در جایی ارسال یا ذخیره نمی‌شوند.
+            در نسخه نهایی می‌توان همین فرم را به بک‌اند یا سامانه ثبت درخواست متصل کرد.
+          </p>
+          <button class="btn btn-primary" id="restartButton" type="button">تکمیل دوباره فرم</button>
+        </div>
+
+      </form>
+
+      <p class="form-note">
+        اطلاعات این فرم برای بررسی درخواست همکاری طراحی شده و این نسخه به سامانه ارسال متصل نیست.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const form = document.getElementById('representativeForm');
+      const slides = [...document.querySelectorAll('.form-slide')];
+      const progressFill = document.getElementById('progressFill');
+      const currentStep = document.getElementById('currentStep');
+      const progressTitle = document.getElementById('progressTitle');
+      const nextButton = document.getElementById('nextButton');
+      const backButton = document.getElementById('backButton');
+      const formActions = document.getElementById('formActions');
+      const formSuccess = document.getElementById('formSuccess');
+      const restartButton = document.getElementById('restartButton');
+      const formStage = document.querySelector('.form-stage');
+      const navToggle = document.querySelector('.nav-toggle');
+      const mainNav = document.querySelector('.main-nav');
+
+      navToggle?.addEventListener('click', () => {
+        const open = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+
+      mainNav?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('is-open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      let current = 0;
+
+      const persianDigits = value =>
+        String(value).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+      function updateStageHeight(slide = slides[current]) {
+        const desktopMinimum = window.matchMedia('(min-width: 701px)').matches ? 475 : 0;
+        formStage.style.height = `${Math.max(desktopMinimum, slide.scrollHeight)}px`;
+      }
+
+      function setStep(next, direction = 'forward') {
+        const oldSlide = slides[current];
+        const newSlide = slides[next];
+
+        oldSlide.classList.remove('is-active', 'is-back');
+        if (direction === 'back') oldSlide.classList.add('is-back');
+
+        newSlide.classList.remove('is-back');
+        newSlide.classList.add('is-active');
+
+        current = next;
+
+        const stepNumber = current + 1;
+        currentStep.textContent = persianDigits(stepNumber);
+        progressTitle.textContent = newSlide.dataset.title;
+        progressFill.style.width = `${(stepNumber / slides.length) * 100}%`;
+
+        requestAnimationFrame(() => updateStageHeight(newSlide));
+
+        backButton.hidden = current === 0;
+        nextButton.innerHTML = current === slides.length - 1
+          ? 'ثبت درخواست <span>✓</span>'
+          : 'مرحله بعد <span>←</span>';
+
+        requestAnimationFrame(() => {
+          const firstField = newSlide.querySelector('input:not([type="radio"]):not([type="checkbox"]), select, textarea');
+          if (firstField) firstField.focus({ preventScroll: true });
+        });
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      requestAnimationFrame(() => updateStageHeight());
+      window.addEventListener('resize', () => updateStageHeight());
+
+      function validateCurrent() {
+        const fields = [...slides[current].querySelectorAll('input, select, textarea')]
+          .filter(field => field.type !== 'button' && field.type !== 'submit');
+
+        let firstInvalid = null;
+
+        for (const field of fields) {
+          if (!field.checkValidity()) {
+            firstInvalid = field;
+            break;
+          }
+        }
+
+        if (firstInvalid) {
+          firstInvalid.reportValidity();
+          firstInvalid.focus();
+          return false;
+        }
+
+        return true;
+      }
+
+      nextButton.addEventListener('click', () => {
+        if (!validateCurrent()) return;
+
+        if (current < slides.length - 1) {
+          setStep(current + 1, 'forward');
+          return;
+        }
+
+        formSuccess.classList.add('is-visible');
+        formStage.style.display = 'none';
+        formActions.style.display = 'none';
+        slides.forEach(slide => slide.style.display = 'none');
+        progressFill.style.width = '100%';
+        progressTitle.textContent = 'تکمیل فرم';
+        currentStep.textContent = '✓';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      backButton.addEventListener('click', () => {
+        if (current > 0) setStep(current - 1, 'back');
+      });
+
+      restartButton.addEventListener('click', () => {
+        form.reset();
+        formStage.style.display = '';
+        slides.forEach(slide => {
+          slide.style.display = '';
+          slide.classList.remove('is-active', 'is-back');
+        });
+
+        current = 0;
+        slides[0].classList.add('is-active');
+        updateStageHeight(slides[0]);
+        formSuccess.classList.remove('is-visible');
+        formActions.style.display = '';
+        currentStep.textContent = '۱';
+        progressTitle.textContent = slides[0].dataset.title;
+        progressFill.style.width = `${100 / slides.length}%`;
+        backButton.hidden = true;
+        nextButton.innerHTML = 'مرحله بعد <span>←</span>';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      form.addEventListener('keydown', event => {
+        if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
+          event.preventDefault();
+          nextButton.click();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="پنل شرکت‌کنندگان دوره جامع هوش‌آرا">
+  <title>پنل شرکت‌کننده | دوره جامع هوش‌آرا</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .student-panel-page .panel-icon-btn { transition: background-color .24s ease, border-color .24s ease, color .24s ease, transform .24s ease; }
+    .student-panel-page .panel-sidebar { transition: transform .36s cubic-bezier(.22,.75,.25,1); }
+    .student-panel-page .panel-overlay { transition: opacity .28s ease, visibility .28s ease; }
+    .student-panel-page .panel-side-nav a { transition: background-color .22s ease, color .22s ease, padding .22s ease; }
+    .student-panel-page .lesson-card { transition: background-color .26s ease, transform .26s cubic-bezier(.22,.75,.25,1); }
+    .student-panel-page .module-chevron { transition: transform .28s cubic-bezier(.22,.75,.25,1); }
+    .student-panel-page .panel-menu-trigger { width:43px; height:43px; padding:8px; border:0; border-radius:0; background:transparent; box-shadow:none; }
+    .student-panel-page .panel-menu-trigger:hover { border-color:transparent; background:transparent; transform:none; }
+    .student-panel-page .panel-menu-trigger span { width:25px; height:2px; margin:5px; }
+    .student-panel-page .panel-main { max-width: 100%; }
+    .student-panel-page .panel-welcome { align-items: flex-start; }
+    .student-panel-page .welcome-copy { text-align: right; min-width: 0; }
+    .student-panel-page .welcome-date { flex-shrink: 0; }
+    .student-panel-page .course-intro-card { grid-template-columns: minmax(145px, 190px) minmax(0, 1fr); gap: 22px; }
+    .student-panel-page .course-character-wrap { min-width: 0; min-height: 190px; }
+    .student-panel-page .course-character { max-width: 100%; }
+    .student-panel-page .course-dialog { min-width: 0; text-align: right; }
+    .student-panel-page .dialog-tail { display: none; }
+    .student-panel-page .event-banner { isolation: isolate; }
+    .student-panel-page .event-overlay { z-index: 2; text-align: right; }
+    .student-panel-page .event-placeholder { z-index: 3; }
+    .student-panel-page .curriculum-heading > div { min-width: 0; text-align: right; }
+    .student-panel-page .curriculum-item summary { min-width: 0; }
+    .student-panel-page .module-title { min-width: 0; text-align: right; }
+    .student-panel-page .module-title b,
+    .student-panel-page .module-title small { overflow-wrap: anywhere; }
+    .student-panel-page .lesson-card { min-width: 0; }
+    .student-panel-page .lesson-card b,
+    .student-panel-page .lesson-card small { max-width: 100%; overflow-wrap: anywhere; }
+    .student-panel-page .panel-bottom-links > div { min-width: 0; }
+    .student-panel-page .panel-bottom-links > div > div { min-width: 0; }
+    .student-panel-page .panel-bottom-links a { white-space: nowrap; }
+    .student-panel-page .notification-panel { max-height: calc(100vh - 105px); overflow-y: auto; }
+    .student-panel-page .course-popover { max-width: calc(100vw - 24px); }
+    @media (min-width: 1000px) {
+      .student-panel-page .panel-main { width: min(1000px, calc(100% - 300px)); margin-right: 275px; }
+      .student-panel-page .panel-menu-trigger { display:none; }
+    }
+    @media (max-width: 720px) {
+      .student-panel-page .panel-welcome { align-items: stretch; }
+      .student-panel-page .welcome-date { align-self: auto; }
+      .student-panel-page .course-intro-card { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+      .student-panel-page .course-character-wrap { min-height: auto; }
+      .student-panel-page .course-character { width: 135px; }
+      .student-panel-page .course-dialog { padding: 18px; }
+      .student-panel-page .curriculum-heading { align-items: flex-start; }
+      .student-panel-page .curriculum-item summary { gap: 8px; }
+      .student-panel-page .module-title b { line-height: 1.7; }
+      .student-panel-page .panel-bottom-links > div { flex-wrap: wrap; }
+      .student-panel-page .panel-bottom-links a { margin-right: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .student-panel-page *, .student-panel-page *::before, .student-panel-page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+</head>
+<body class="student-panel-page">
+  <header class="site-header panel-header">
+    <div class="container panel-nav">
+      <div class="panel-nav-side panel-nav-right">
+        <button class="nav-toggle" type="button" id="menuToggle" aria-label="باز کردن منو" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+        
+        <a class="panel-brand" href="#" aria-label="دوره جامع هوش آرا">
+          <span class="panel-brand-mark">هـ</span>
+          <strong>دوره جامع هوش آرا</strong>
+        </a>
+      </div>
+      <div class="panel-nav-side panel-nav-left">
+        <div class="course-switcher">
+          <button class="panel-icon-btn course-switch-btn" id="courseToggle" type="button" aria-expanded="false" aria-label="انتخاب دوره">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h8M12 8v8"></path></svg>
+          </button>
+          <div class="panel-popover course-popover" id="courseMenu" hidden>
+            <strong>دوره‌های من</strong>
+            <button class="course-option is-selected" type="button"><span class="course-option-dot"></span> دوره جامع هوش‌آرا <small>در حال یادگیری</small></button>
+            <button class="course-option" type="button"><span class="course-option-dot course-option-dot--muted"></span> دوره خلاقیت کودک <small>قابل ثبت‌نام</small></button>
+            <button class="course-option" type="button"><span class="course-option-dot course-option-dot--muted"></span> مهارت‌های ذهنی <small>دوره‌های دیگر</small></button>
+          </div>
+        </div>
+        <button class="panel-icon-btn notification-trigger" id="notificationToggle" type="button" aria-label="اعلانات" title="اعلانات">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"></path></svg><i></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="panel-overlay" id="panelOverlay"></div>
+  <aside class="panel-sidebar" id="panelSidebar" aria-label="منوی پنل">
+    <button class="panel-sidebar-close" id="sidebarClose" type="button" aria-label="بستن منو">×</button>
+    <div class="sidebar-profile">
+      <div class="avatar avatar-user"><span>م</span></div>
+      <strong>مریم احمدی</strong>
+      <small>شرکت‌کننده دوره</small>
+      <div class="progress-caption"><span>پیشرفت دوره</span><b>۳۵٪</b></div>
+      <div class="mini-progress"><span style="width:35%"></span></div>
+    </div>
+    <nav class="panel-side-nav">
+      <a class="is-active" href="#home"><span class="side-nav-icon">⌂</span> صفحه نخست</a>
+      <a href="#conversation"><span class="side-nav-icon">☏</span> گفتگو</a>
+      <a href="#about-us"><span class="side-nav-icon">ⓘ</span> درباره ما</a>
+      <a href="#contact"><span class="side-nav-icon">✉</span> تماس با ما</a>
+    </nav>
+    <div class="sidebar-help"><span>✦</span><p><b>همراه شما هستیم</b><small>برای ادامه مسیر یادگیری، هر زمان به کمک نیاز داشتید با ما در ارتباط باشید.</small></p></div>
+  </aside>
+
+  <main class="container panel-main" id="home">
+    <section class="panel-welcome">
+      <div class="welcome-copy">
+        <span class="eyebrow">فضای یادگیری شما</span>
+        <h1>سلام مریم جان! <em>👋</em></h1>
+        <p>خوش اومدی به مسیر یادگیری هوش‌آرا؛ آماده‌ای ادامه بدیم؟</p>
+      </div>
+      <div class="welcome-date"><span class="welcome-date-icon">✦</span><span><small>مسیر تو تا اینجا</small><strong>۳۵٪ پیشرفت</strong></span></div>
+    </section>
+
+    <section class="course-intro-card">
+      <div class="course-character-wrap">
+        <div class="course-character">
+          <img src="assets/images/course-profile.webp" alt="تصویر معرفی دوره" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <span class="image-fallback" style="display:none">هوش‌آرا</span>
+        </div>
+        <span class="character-sparkle sparkle-one">✦</span><span class="character-sparkle sparkle-two">✧</span>
+      </div>
+      <div class="course-dialog">
+        <span class="dialog-tail"></span>
+        <span class="dialog-label">درباره دوره‌ات</span>
+        <h2>🌱 دوره جامع هوش‌آرا</h2>
+        <p>به دنیای <b>کشف استعدادها</b> و <b>پرورش مهارت‌های ذهنی</b> خوش اومدی! 🧠✨</p>
+        <p>اینجا قراره با بازی، تجربه و فعالیت‌های جذاب، قدم‌به‌قدم توانایی‌هات رو رشد بدی. 🎨🧩</p>
+        <p class="dialog-note">💡 <b>یادت باشه:</b> هر درس، یک فرصت تازه برای یادگیری و کشف چیزهای جدیده.</p>
+      </div>
+    </section>
+
+    <section class="event-banner" aria-label="رویداد دوره">
+      <img src="assets/images/course-event-banner.webp" alt="بنر رویداد دوره" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.nextElementSibling.style.display='none'">
+      <div class="event-placeholder" style="display:none"><span class="event-placeholder-icon">✦</span><div><b>جایگاه بنر رویداد دوره</b><small>تصویر رویدادها و برنامه‌های پیشِ رو اینجا قرار می‌گیرد.</small></div><span class="event-arrow">←</span></div>
+      <div class="event-overlay"><span>رویدادهای هوش‌آرا</span><b>خبرهای تازه و برنامه‌های پیشِ رو</b></div>
+    </section>
+
+    <section class="curriculum-section" id="curriculum">
+      <div class="curriculum-heading">
+        <div><span class="eyebrow">مسیر یادگیری</span><h2>سرفصل‌های <em>دوره</em></h2><p>برای دیدن درس‌های هر بخش، روی سرفصل موردنظرت کلیک کن.</p></div>
+        <span class="curriculum-count">۴ سرفصل</span>
+      </div>
+
+      <div class="curriculum-list">
+        <details class="curriculum-item" open>
+          <summary><span class="module-number">۰۱</span><span class="module-title"><b>آشنایی با دنیای هوش</b><small>۴ درس · ۲ درس تکمیل‌شده</small></span><span class="module-progress">۵۰٪</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <div class="lesson-grid">
+            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-01.webp" alt=""><span class="lesson-placeholder">۱</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>هوش یعنی چه؟</b><small>درس اول</small></a>
+            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-02.webp" alt=""><span class="lesson-placeholder">۲</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>استعدادهای من</b><small>درس دوم</small></a>
+            <a class="lesson-card is-available" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-03.webp" alt=""><span class="lesson-placeholder">۳</span></span><b>کشف توانایی‌ها</b><small>درس سوم</small></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-04.webp" alt=""><span class="lesson-placeholder">۴</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرین و تجربه</b><small>درس چهارم</small></a>
+          </div>
+        </details>
+
+        <details class="curriculum-item">
+          <summary><span class="module-number module-number--pink">۰۲</span><span class="module-title"><b>پرورش خلاقیت</b><small>۳ درس · ۱ درس تکمیل‌شده</small></span><span class="module-progress">۳۳٪</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <div class="lesson-grid">
+            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-05.webp" alt=""><span class="lesson-placeholder">۱</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>ذهن خلاق من</b><small>درس اول</small></a>
+            <a class="lesson-card is-available" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-06.webp" alt=""><span class="lesson-placeholder">۲</span></span><b>ایده‌های تازه</b><small>درس دوم</small></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-07.webp" alt=""><span class="lesson-placeholder">۳</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>بازی با خیال</b><small>درس سوم</small></a>
+          </div>
+        </details>
+
+        <details class="curriculum-item">
+          <summary><span class="module-number module-number--green">۰۳</span><span class="module-title"><b>تقویت مهارت‌های ذهنی</b><small>۳ درس · در انتظار شروع</small></span><span class="module-progress">۰٪</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <div class="lesson-grid">
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-08.webp" alt=""><span class="lesson-placeholder">۱</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرکز و دقت</b><small>درس اول</small></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-09.webp" alt=""><span class="lesson-placeholder">۲</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>حافظه پویا</b><small>درس دوم</small></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-10.webp" alt=""><span class="lesson-placeholder">۳</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>حل مسئله</b><small>درس سوم</small></a>
+          </div>
+        </details>
+
+        <details class="curriculum-item">
+          <summary><span class="module-number module-number--gold">۰۴</span><span class="module-title"><b>یادگیری در کنار خانواده</b><small>۲ درس · در انتظار شروع</small></span><span class="module-progress">۰٪</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <div class="lesson-grid">
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-11.webp" alt=""><span class="lesson-placeholder">۱</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>بازی و همراهی</b><small>درس اول</small></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-12.webp" alt=""><span class="lesson-placeholder">۲</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرین در خانه</b><small>درس دوم</small></a>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel-bottom-links" aria-label="اطلاعات بیشتر">
+      <div id="conversation"><span>☏</span><div><b>گفتگو با پشتیبانی</b><small>برای پرسش‌ها و راهنمایی در مسیر یادگیری</small></div><a href="#conversation">شروع گفتگو ←</a></div>
+      <div id="about-us"><span>ⓘ</span><div><b>درباره هوش‌آرا</b><small>آشنایی بیشتر با مسیر آموزشی ما</small></div><a href="#about-us">بیشتر بدانید ←</a></div>
+      <div id="contact"><span>✉</span><div><b>تماس با ما</b><small>راه‌های ارتباط با تیم هوش‌آرا</small></div><a href="mailto:info@example.com">ارتباط ←</a></div>
+    </section>
+    <footer class="panel-footer">با عشق برای مسیر رشد و یادگیری شما <span>♥</span></footer>
+  </main>
+
+  <div class="notification-panel" id="notificationPanel" hidden>
+    <div class="notification-panel-head"><b>اعلانات</b><button id="notificationClose" type="button" aria-label="بستن">×</button></div>
+    <div class="notification-item"><span>✦</span><p><b>به هوش‌آرا خوش آمدی!</b><small>مسیر یادگیری تو آماده ادامه است.</small></p></div>
+    <div class="notification-item"><span>📚</span><p><b>درس‌های تازه در انتظار توست</b><small>برای ادامه، سرفصل‌های دوره را ببین.</small></p></div>
+    <div class="notification-item"><span>♡</span><p><b>یادآوری دوستانه</b><small>هر قدم کوچک، یک پیشرفت بزرگ است.</small></p></div>
+  </div>
+
+  <script>
+    const courseToggle = document.getElementById('courseToggle');
+    const courseMenu = document.getElementById('courseMenu');
+    const notificationToggle = document.getElementById('notificationToggle');
+    const notificationPanel = document.getElementById('notificationPanel');
+    const notificationClose = document.getElementById('notificationClose');
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('panelSidebar');
+    const overlay = document.getElementById('panelOverlay');
+    const sidebarClose = document.getElementById('sidebarClose');
+
+    courseToggle.addEventListener('click', () => {
+      closeSidebar();
+      const open = courseMenu.hidden;
+      courseMenu.hidden = !open;
+      courseToggle.setAttribute('aria-expanded', String(open));
+      notificationPanel.hidden = true;
+    });
+    document.querySelectorAll('.course-option').forEach(option => {
+      option.addEventListener('click', () => {
+        document.querySelectorAll('.course-option').forEach(item => item.classList.remove('is-selected'));
+        option.classList.add('is-selected');
+        courseMenu.hidden = true;
+        courseToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    notificationToggle.addEventListener('click', () => {
+      closeSidebar();
+      notificationPanel.hidden = !notificationPanel.hidden;
+      courseMenu.hidden = true;
+      courseToggle.setAttribute('aria-expanded', 'false');
+    });
+    notificationClose.addEventListener('click', () => notificationPanel.hidden = true);
+    function openSidebar() {
+      courseMenu.hidden = true;
+      courseToggle.setAttribute('aria-expanded', 'false');
+      notificationPanel.hidden = true;
+      sidebar.classList.add('is-open');
+      overlay.classList.add('is-visible');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('is-open');
+      overlay.classList.remove('is-visible');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    menuToggle.addEventListener('click', openSidebar);
+    sidebarClose.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+    document.querySelectorAll('.panel-side-nav a').forEach(link => link.addEventListener('click', closeSidebar));
+    document.addEventListener('click', event => {
+      if (!event.target.closest('.course-switcher') && !event.target.closest('.course-popover')) {
+        courseMenu.hidden = true;
+        courseToggle.setAttribute('aria-expanded', 'false');
+      }
+      if (!event.target.closest('.notification-panel') && !event.target.closest('.notification-trigger')) notificationPanel.hidden = true;
+    });
+  </script>
+</body>
+</html>
