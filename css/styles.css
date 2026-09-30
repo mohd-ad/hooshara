@@ -2521,3 +2521,85 @@ em { color: var(--gold); font-style: normal; }
     text-align: center;
   }
 }
+
+
+/* ================================
+   10 INTELLIGENCES CARD DECK
+   ================================ */
+.intelligence-deck { position:relative; max-width:1120px; margin:0 auto; }
+.intelligence-stage { position:relative; height:365px; perspective:1500px; transform-style:preserve-3d; overflow:visible; }
+.intelligence-card {
+  position:absolute; top:0; bottom:0; left:50%; width:min(620px,60vw); height:315px; margin:auto;
+  padding:34px 38px; display:grid; grid-template-columns:1fr; grid-template-rows:auto 1fr;
+  gap:0 25px; align-items:center; justify-items:center; text-align:center; overflow:hidden; cursor:pointer;
+  background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:30px;
+  box-shadow:0 22px 60px rgba(72,51,60,.10); direction:rtl;
+  opacity:0; pointer-events:none;
+  transform-origin:center center;
+  transform:translate3d(-50%,0,0) rotateY(0deg) scale(.7);
+  transition:transform .65s cubic-bezier(.22,.72,.18,1), opacity .5s ease, box-shadow .35s ease;
+  will-change:transform,opacity;
+}
+.intelligence-card::before { content:""; position:absolute; width:190px; height:190px; left:-85px; bottom:-110px; border-radius:50%; background:rgba(247,223,229,.4); pointer-events:none; }
+/* Real deck positions: center, near-left/right, mid-left/right and deep-left/right */
+.intelligence-card[data-position="0"] { opacity:1; pointer-events:auto; transform:translate3d(-50%,0,100px) rotateY(0deg) scale(1); z-index:40!important; box-shadow:0 30px 82px rgba(72,51,60,.16); }
+.intelligence-card[data-position="1"] { opacity:.92; pointer-events:auto; transform:translate3d(-17%,12px,20px) rotateY(-8deg) scale(.92); }
+.intelligence-card[data-position="-1"] { opacity:.92; pointer-events:auto; transform:translate3d(-83%,12px,20px) rotateY(8deg) scale(.92); }
+.intelligence-card[data-position="2"] { opacity:.58; pointer-events:auto; transform:translate3d(11%,27px,-65px) rotateY(-13deg) scale(.82); }
+.intelligence-card[data-position="-2"] { opacity:.58; pointer-events:auto; transform:translate3d(-111%,27px,-65px) rotateY(13deg) scale(.82); }
+.intelligence-card[data-position="3"] { opacity:.28; transform:translate3d(34%,42px,-145px) rotateY(-17deg) scale(.72); }
+.intelligence-card[data-position="-3"] { opacity:.28; transform:translate3d(-134%,42px,-145px) rotateY(17deg) scale(.72); }
+.intelligence-card[data-position="4"] { opacity:.10; transform:translate3d(53%,55px,-220px) rotateY(-20deg) scale(.62); }
+.intelligence-card[data-position="-4"] { opacity:.10; transform:translate3d(-153%,55px,-220px) rotateY(20deg) scale(.62); }
+.intelligence-card[data-position="5"], .intelligence-card[data-position="-5"] { opacity:0; pointer-events:none; transform:translate3d(-50%,60px,-280px) scale(.55); }
+.intelligence-card:hover[data-position="0"] { transform:translate3d(-50%,-5px,120px) rotateY(0deg) scale(1.015); }
+.intelligence-card:hover[data-position="1"] { transform:translate3d(-17%,7px,30px) rotateY(-8deg) scale(.94); }
+.intelligence-card:hover[data-position="-1"] { transform:translate3d(-83%,7px,30px) rotateY(8deg) scale(.94); }
+.intelligence-card-top { position:absolute; top:22px; right:26px; left:26px; display:flex; justify-content:space-between; align-items:center; }
+.intelligence-number { font-size:12px; font-weight:800; color:var(--gold-dark); letter-spacing:.08em; }
+.intelligence-hint { color:#aa9da3; font-size:10px; opacity:.9; }
+.intelligence-icon { width:104px; height:104px; display:grid; place-items:center; border-radius:50%; font-size:42px; line-height:1; box-shadow:0 12px 30px rgba(72,51,60,.07); }
+.intelligence-icon--pink { background:var(--pink-soft); color:var(--pink-strong); }
+.intelligence-icon--gold { background:#fbf3df; color:var(--gold); }
+.intelligence-icon--green { background:var(--green-soft); color:#789582; }
+.intelligence-icon--blue { background:#eaf2f4; color:#6c9cab; }
+.intelligence-icon--cream { background:var(--cream); color:#b68b48; }
+.intelligence-content { align-self:center; padding-top:15px; }
+.intelligence-kicker { display:block; color:var(--gold-dark); font-size:11px; font-weight:800; margin-bottom:5px; }
+.intelligence-content h3 { margin:0 0 9px; font-size:28px; line-height:1.4; }
+.intelligence-content p { margin:0; max-width:520px; color:var(--muted); font-size:14px; line-height:2; }
+.intelligence-arrow { width:43px; height:43px; display:grid; place-items:center; border-radius:14px; background:#fff; color:var(--gold); font-size:18px; box-shadow:0 8px 24px rgba(72,51,60,.08); align-self:end; }
+.intelligence-controls { display:flex; align-items:center; gap:15px; max-width:760px; margin:6px auto 0; position:relative; z-index:1; }
+.intelligence-progress { height:5px; flex:1; overflow:hidden; border-radius:99px; background:#eee5e7; direction:ltr; }
+.intelligence-progress span { display:block; height:100%; width:0%; border-radius:inherit; background:linear-gradient(90deg,var(--pink-strong),var(--gold)); transition:width 8s linear; }
+.intelligence-counter { min-width:54px; text-align:center; line-height:1.2; }
+.intelligence-counter strong { display:block; font-size:14px; color:var(--ink); }
+.intelligence-counter small { color:var(--muted); font-size:9px; }
+.intelligence-next { border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:13px; min-height:43px; padding:7px 14px; font:inherit; font-size:11px; font-weight:800; cursor:pointer; transition:.2s ease; }
+.intelligence-next:hover { border-color:var(--pink-strong); background:var(--pink-soft); transform:translateY(-2px); }
+@media (max-width:1100px) {
+  .intelligence-stage { height:355px; }
+  .intelligence-card { width:min(600px,64vw); }
+}
+@media (max-width:700px) {
+  .intelligence-stage { height:390px; perspective:1000px; }
+  .intelligence-card { width:calc(100% - 72px); height:340px; min-height:340px; padding:43px 22px 26px; grid-template-columns:1fr auto; grid-template-rows:auto auto 1fr; gap:16px; border-radius:25px; }
+  .intelligence-card[data-position="0"] { transform:translate3d(-50%,0,100px) scale(1); }
+  .intelligence-card[data-position="1"] { transform:translate3d(-36%,20px,15px) rotateY(-5deg) scale(.92); }
+  .intelligence-card[data-position="-1"] { transform:translate3d(-64%,20px,15px) rotateY(5deg) scale(.92); }
+  .intelligence-card[data-position="2"] { transform:translate3d(-23%,38px,-70px) rotateY(-8deg) scale(.84); }
+  .intelligence-card[data-position="-2"] { transform:translate3d(-77%,38px,-70px) rotateY(8deg) scale(.84); }
+  .intelligence-card[data-position="3"], .intelligence-card[data-position="-3"] { opacity:.20; }
+  .intelligence-card-top { top:18px; right:20px; left:20px; }
+  .intelligence-icon { width:82px; height:82px; border-radius:50%; font-size:32px; grid-column:1 / -1; }
+  .intelligence-content { padding-top:0; grid-column:1 / -1; }
+  .intelligence-content h3 { font-size:24px; margin-bottom:7px; }
+  .intelligence-content p { font-size:13px; line-height:2; }
+  .intelligence-arrow { grid-column:2; grid-row:3; align-self:end; }
+  .intelligence-controls { gap:9px; margin-top:4px; }
+  .intelligence-next { min-height:40px; font-size:10px; }
+  .intelligence-hint { font-size:9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intelligence-card, .intelligence-progress span, .intelligence-next { transition:none; }
+}
