@@ -2603,3 +2603,17 @@ em { color: var(--gold); font-style: normal; }
 @media (prefers-reduced-motion: reduce) {
   .intelligence-card, .intelligence-progress span, .intelligence-next { transition:none; }
 }
+
+@media (max-width: 700px) {
+  .hero { padding-top:32px; padding-bottom:36px; }
+  .hero-grid { min-height:0; row-gap:8px; }
+  .hero-visual { min-height:320px; }
+  .hero-actions { margin-top:20px; }
+  .hero-bottom { margin-top:12px; }
+  .section { padding-block:54px; }
+  .features { padding-top:36px; }
+  .representative { padding-top:38px; }
+  .faq-grid { gap:24px; }
+  .cta { padding-top:44px; }
+  .site-footer { padding-top:50px; }
+}
