@@ -2553,6 +2553,15 @@ em { color: var(--gold); font-style: normal; }
   }
 }
 
+@media (min-width: 1000px) {
+  .student-lesson-page .panel-nav,
+  .student-lesson-page .panel-main {
+    width:min(1000px, calc(100% - 300px));
+    margin-inline:auto;
+    transform:translateX(-122.5px);
+  }
+}
+
 
 /* ================================
    10 INTELLIGENCES CARD DECK
@@ -2694,3 +2703,6 @@ textarea, [contenteditable="true"] {
 @media (prefers-reduced-motion: reduce) {
   .video-card { animation:none; }
 }
+
+.side-nav-icon svg { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.panel-bottom-links > div > span svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
