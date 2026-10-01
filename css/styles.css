@@ -2598,8 +2598,12 @@ em { color: var(--gold); font-style: normal; }
 .intelligence-card-top { position:absolute; top:22px; right:26px; left:26px; display:flex; justify-content:space-between; align-items:center; }
 .intelligence-number { font-size:12px; font-weight:800; color:var(--gold-dark); letter-spacing:.08em; }
 .intelligence-hint { color:#aa9da3; font-size:10px; opacity:.9; }
-.intelligence-icon { width:104px; height:104px; display:grid; place-items:center; border-radius:50%; font-size:42px; line-height:1; box-shadow:0 12px 30px rgba(72,51,60,.07); }
+.intelligence-icon { width:104px; height:104px; display:grid; place-items:center; border-radius:50%; font-size:42px; line-height:1; box-shadow:0 12px 30px rgba(72,51,60,.07); overflow:visible; }
 .intelligence-icon--pink { background:var(--pink-soft); color:var(--pink-strong); }
+.intelligence-icon img {
+  display:block; width:112%; height:112%; max-width:none; object-fit:contain;
+  object-position:center; position:relative; z-index:1;
+}
 .intelligence-icon--gold { background:#fbf3df; color:var(--gold); }
 .intelligence-icon--green { background:var(--green-soft); color:#789582; }
 .intelligence-icon--blue { background:#eaf2f4; color:#6c9cab; }
