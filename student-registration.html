@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ثبت‌نام دوره جامع هوش‌آرا از طریق نمایندگی">
   <title>ثبت‌نام دوره هوش‌آرا | ثبت‌نام اختصاصی نمایندگی</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 
@@ -150,7 +147,7 @@
             <span class="enrollment-step-number">۰۳</span>
             <h2>از این مسیر چه <em>انتظاری</em> دارید؟</h2>
             <p class="enrollment-slide-description">
-              پاسخ شما کمک می‌کند همراهی خانواده با هدف دوره هماهنگ‌تر باشد.
+              پاسخ شما کمک می‌کند همراهی شما با هدف دوره هماهنگ‌تر باشد.
             </p>
           </div>
 
@@ -367,6 +364,7 @@
   </footer>
 </main>
 
+<script src="js/persian-date-picker.js"></script>
 <script>
 (() => {
   /*
@@ -403,46 +401,6 @@
   document.getElementById("repPhone").textContent = representative.phone;
   document.getElementById("repCodePill").textContent = "کد نمایندگی: " + representative.code;
   document.getElementById("acceptOrganizerName").textContent = representative.organizer;
-
-  // مقادیر نمونه برای بررسی ظاهری مرحله بازبینی در این نسخه.
-  // در نسخه نهایی می‌توان این بخش را حذف کرد تا فرم از ابتدا خالی باشد.
-  const demoValues = {
-    childName: "علی رضایی",
-    birthDate: "۱۴۰۰/۰۵/۱۲",
-    childGender: "پسر",
-    childNotes: "به فعالیت‌های ساختنی و بازی‌های فکری علاقه دارد.",
-    motherName: "مریم رضایی",
-    motherMobile: "۰۹۱۲۱۲۳۴۵۶۷",
-    city: "مشهد",
-    motherEducation: "کارشناسی",
-    motherJob: "معلم",
-    goal: "تقویت مهارت‌های شناختی و افزایش تمرکز کودک.",
-    dailyTime: "یک ساعت",
-    previousCourse: "در یک دوره بازی و خلاقیت کودک شرکت کرده‌ایم.",
-    learningExpectation: "فعالیت‌های کاربردی و قابل اجرا در خانه برایمان مهم است.",
-    courseType: "حضوری"
-  };
-
-  Object.entries(demoValues).forEach(([id, value]) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (el.type === "radio") {
-      const option = document.querySelector(`input[name="${el.name}"][value="${value}"]`);
-      if (option) option.checked = true;
-    } else {
-      el.value = value;
-    }
-  });
-
-  ["dailyTime", "courseType"].forEach(name => {
-    const option = document.querySelector(`input[name="${name}"][value="${demoValues[name]}"]`);
-    if (option) option.checked = true;
-  });
-
-  ["acceptOrganizer", "acceptDetails", "acceptAge"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.checked = true;
-  });
 
   const form = document.getElementById("enrollmentForm");
   const slides = [...document.querySelectorAll(".enrollment-slide")];
@@ -593,13 +551,36 @@
       .replaceAll("'", "&#039;");
   }
 
+  let formAlertTimer;
+  function showFormAlert(message = "لطفاً اطلاعات این مرحله را کامل کنید.") {
+    let alertBox = document.getElementById("formAlert");
+    if (!alertBox) {
+      alertBox = document.createElement("div");
+      alertBox.id = "formAlert";
+      alertBox.className = "form-alert";
+      alertBox.setAttribute("role", "alert");
+      alertBox.setAttribute("aria-live", "assertive");
+      alertBox.innerHTML = '<span class="form-alert-icon" aria-hidden="true">!</span><span class="form-alert-copy"><strong>یک مورد باقی مانده</strong><span class="form-alert-message"></span></span><button class="form-alert-close" type="button" aria-label="بستن پیام">×</button>';
+      document.body.appendChild(alertBox);
+      alertBox.querySelector(".form-alert-close").addEventListener("click", () => alertBox.classList.remove("is-visible"));
+    }
+    alertBox.querySelector(".form-alert-message").textContent = message;
+    alertBox.classList.add("is-visible");
+    clearTimeout(formAlertTimer);
+    formAlertTimer = setTimeout(() => alertBox.classList.remove("is-visible"), 5000);
+  }
+
   function validateCurrent() {
     const currentSlide = slides[current];
     const required = [...currentSlide.querySelectorAll("[required]")];
 
     for (const element of required) {
-      if (!element.checkValidity()) {
-        element.reportValidity();
+      const blankText = element.matches('input[type="text"], input[type="tel"], input[type="email"], textarea') && !element.value.trim();
+      if (!element.checkValidity() || blankText) {
+        const label = element.id && document.querySelector(`label[for="${element.id}"]`);
+        const fieldName = label?.textContent.replace("*", "").trim();
+        showFormAlert(fieldName ? `لطفاً «${fieldName}» را تکمیل کنید.` : "لطفاً موارد الزامی این مرحله را تکمیل کنید.");
+        element.setAttribute("aria-invalid", "true");
         element.focus({ preventScroll: true });
         return false;
       }
@@ -652,6 +633,14 @@
     }
   }
 
+  // Capture the action first so an incomplete step can never reach the navigation handler.
+  nextButton.addEventListener("click", event => {
+    if (!validateCurrent()) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }, true);
+
   nextButton.addEventListener("click", () => {
     if (!validateCurrent()) return;
 
@@ -663,7 +652,7 @@
     if (current === 6) {
       if (!field("confirmReview").checked) {
         reviewWarning.classList.add("is-visible");
-        field("confirmReview").reportValidity();
+        showFormAlert("برای ادامه، تأیید بازبینی اطلاعات را علامت بزنید.");
         return;
       }
       reviewWarning.classList.remove("is-visible");
@@ -673,7 +662,10 @@
     }
 
     if (current === 7) {
-      if (!field("confirmPayment").checked) return;
+      if (!field("confirmPayment").checked) {
+        showFormAlert("برای تکمیل ثبت‌نام، تأیید نهایی را علامت بزنید.");
+        return;
+      }
       success.classList.add("is-visible");
       document.querySelector(".enrollment-stage").style.display = "none";
       actions.style.display = "none";

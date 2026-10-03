@@ -21,7 +21,7 @@
 
         <a class="panel-brand" href="panel.html" aria-label="دوره جامع هوش آرا">
           <span class="panel-brand-mark">هـ</span>
-          <strong>دوره جامع هوش آرا</strong>
+          <strong>دوره جامع هوش‌آرا</strong>
         </a>
       </div>
 
@@ -73,15 +73,23 @@
       <div class="avatar avatar-user"><span>م</span></div>
       <strong>مریم احمدی</strong>
       <small>شرکت‌کننده دوره</small>
-      <div class="progress-caption"><span>پیشرفت دوره</span><b>۳۵٪</b></div>
-      <div class="mini-progress"><span style="width:35%"></span></div>
+      <div class="sidebar-neuron-balance" aria-label="موجودی ۲۸۵ نورون">
+        <span class="sidebar-neuron-icon" aria-hidden="true">✦</span>
+        <span><small>موجودی نورون</small><b>۲۸۵ <small>نورون</small></b></span>
+      </div>
+      <div class="sidebar-course-progress">
+        <div class="sidebar-course-progress-caption"><span>پیشرفت دوره</span><b>۶۵٪ مانده</b></div>
+        <div class="sidebar-course-progress-track" role="progressbar" aria-label="پیشرفت دوره" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-valuetext="۳۵ درصد طی شده، ۶۵ درصد تا پایان مانده">
+          <span style="width:35%"></span>
+        </div>
+      </div>
     </div>
 
     <nav class="panel-side-nav">
-      <a class="is-active" href="panel.html"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg></span> صفحه نخست</a>
-      <a href="#conversation"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-4-.9L3 20l1.4-4.1a8 8 0 1 1 15.6-4.4Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span> گفتگو</a>
-      <a href="#about-us"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span> درباره ما</a>
-      <a href="#contact"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span> تماس با ما</a>
+      <a class="is-active" href="panel.html#home"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg></span> صفحه نخست</a>
+      <a href="support-student.html"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-4-.9L3 20l1.4-4.1a8 8 0 1 1 15.6-4.4Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span> گفتگو</a>
+      <a href="panel.html#about-us"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span> درباره ما</a>
+      <a href="panel.html#contact"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span> تماس با ما</a>
     </nav>
 
     <div class="sidebar-help">
@@ -323,15 +331,53 @@
         <p class="lesson-error" id="lessonError">لطفاً به دو سؤال تستی پاسخ بده، پاسخ تشریحی را بنویس و فایل فعالیت را انتخاب کن.</p>
 
         <div class="lesson-submit">
-          <p class="lesson-required-note">پس از تکمیل، به صفحه پنل برمی‌گردی.</p>
+          <p class="lesson-required-note">پس از ارسال، تا پیش از بررسی مربی می‌توانی موارد را ویرایش کنی.</p>
           <button class="lesson-submit-button" id="completeLesson" type="button">
-            درس را تکمیل کردم
+            ارسال فعالیت برای مربی
           </button>
         </div>
 
       </section>
 
     </div>
+
+    <section class="lesson-review-result lesson-submitted-notice" id="lessonSubmittedNotice" aria-label="وضعیت ارسال فعالیت" hidden>
+      <div class="review-result-top">
+        <div class="review-result-icon">✓</div>
+        <div>
+          <span class="eyebrow">فعالیت ارسال شد</span>
+          <h2>فعالیتت برای مربی فرستاده شد.</h2>
+          <p class="submission-waiting-copy">حالا منتظر بمان تا مربی فعالیتت را بررسی کند و نورون‌هایت را ثبت کند.</p>
+        </div>
+      </div>
+      <div class="review-result-grid">
+        <div><span>وضعیت</span><strong class="status-chip">در انتظار بررسی مربی</strong><small>تا قبل از بررسی مربی می‌توانی پاسخ‌ها و فایل‌هایت را ویرایش کنی.</small></div>
+        <div class="submission-edit-action"><button class="btn btn-ghost" id="editSubmission" type="button">ویرایش موارد ارسالی</button></div>
+      </div>
+    </section>
+
+    <section class="lesson-review-result" aria-label="نتیجه بررسی فعالیت" hidden>
+      <div class="review-result-top">
+        <div class="review-result-icon">✓</div>
+        <div>
+          <span class="eyebrow">نتیجه بررسی فعالیت</span>
+          <h2>فعالیتت توسط مربی بررسی شده است.</h2>
+        </div>
+        <div class="neuron-award"><b>+۴۵</b><span>نورون</span></div>
+      </div>
+      <div class="review-result-grid">
+        <div>
+          <span>نظر مربی</span>
+          <p>ایده‌ات را خوب توضیح داده‌ای. در فعالیت بعدی، سعی کن دلیل انتخابت را با یک مثال واقعی کامل‌تر کنی.</p>
+        </div>
+        <div>
+          <span>وضعیت</span>
+          <strong class="status-chip status-chip--done">تأیید و امتیازدهی شد</strong>
+          <small>امتیاز این فعالیت به مجموع نورون‌های تو اضافه شده است.</small>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="support-student.html">پاسخ یا سؤال درباره این بررسی ←</a>
+    </section>
 
     <footer class="panel-footer">
       با عشق برای مسیر رشد و یادگیری شما <span>♥</span>
@@ -477,6 +523,8 @@
 
     const completeLesson = document.getElementById('completeLesson');
     const lessonError = document.getElementById('lessonError');
+    const lessonSubmittedNotice = document.getElementById('lessonSubmittedNotice');
+    const editSubmission = document.getElementById('editSubmission');
 
     completeLesson.addEventListener('click', () => {
       const q1 = document.querySelector('input[name="question1"]:checked');
@@ -491,7 +539,15 @@
       }
 
       lessonError.classList.remove('is-visible');
-      window.location.href = 'panel.html';
+      lessonActivity.classList.remove('is-visible');
+      lessonSubmittedNotice.hidden = false;
+      lessonSubmittedNotice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    editSubmission.addEventListener('click', () => {
+      lessonSubmittedNotice.hidden = true;
+      lessonActivity.classList.add('is-visible');
+      lessonActivity.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   </script>
 

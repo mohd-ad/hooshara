@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="مرکز مدیریت مجموعه | دوره جامع هوش‌آرا">
+<title>مرکز مدیریت مجموعه | هوش‌آرا</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="role-panel-page">
+<header class="site-header panel-header">
+  <div class="container panel-nav">
+    <div class="panel-nav-side panel-nav-right">
+      <button class="nav-toggle" type="button" id="menuToggle" aria-label="باز کردن منو" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="panel-brand" href="supervisor-panel.html" aria-label="مرکز مدیریت هوش‌آرا"><span class="panel-brand-mark">هـ</span><strong>دوره جامع هوش‌آرا</strong></a>
+    </div>
+    <div class="panel-nav-side panel-nav-left">
+      <div class="course-switcher">
+        <button class="panel-icon-btn course-switch-btn" id="courseToggle" type="button" aria-expanded="false" aria-label="انتخاب نمای کلی"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h8M12 8v8"></path></svg></button>
+        <div class="panel-popover course-popover" id="courseMenu" hidden><strong>دوره‌های تحت مدیریت</strong><button class="course-option is-selected" type="button"><span class="course-option-dot"></span>دوره جامع هوش‌آرا<small>فعال · ۵۴ شرکت‌کننده</small></button><button class="course-option" type="button"><span class="course-option-dot course-option-dot--muted"></span>دوره خلاقیت کودک<small>فعال · ۱۸ شرکت‌کننده</small></button></div>
+      </div>
+      <button class="panel-icon-btn notification-trigger" id="notificationToggle" type="button" aria-label="اعلانات" title="اعلانات"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"></path></svg><i></i></button>
+    </div>
+  </div>
+</header>
+<div class="panel-overlay" id="panelOverlay"></div>
+<aside class="panel-sidebar role-sidebar" id="panelSidebar">
+  <button class="panel-sidebar-close" id="sidebarClose" type="button">×</button>
+  <div class="sidebar-profile">
+    <div class="avatar avatar-user"><span>م</span></div>
+    <strong>مرکز آموزشی شکوفا</strong>
+    <small>مدیریت دوره‌ها و ثبت‌نامی‌ها</small>
+  </div>
+  <nav class="panel-side-nav"><a class="is-active" href="supervisor-panel.html"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg></span>خانه</a>
+<a class="" href="#courses"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h12a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2V4.5Z"/><path d="M7 20a2 2 0 0 0 2-2V4.5"/></svg></span>دوره‌ها</a>
+<a class="" href="#coaches"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-1.5a4.5 4.5 0 0 0-4.5-4.5H7a4.5 4.5 0 0 0-4.5 4.5V20"/><circle cx="9.25" cy="7" r="3"/><path d="M16 4.5a3 3 0 0 1 0 5.8M16.5 14.2a4.5 4.5 0 0 1 4 4.5V20"/></svg></span>مربی‌ها</a>
+<a class="" href="#registrations"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-1.5a4.5 4.5 0 0 0-4.5-4.5H7a4.5 4.5 0 0 0-4.5 4.5V20"/><circle cx="9.25" cy="7" r="3"/><path d="M16 4.5a3 3 0 0 1 0 5.8M16.5 14.2a4.5 4.5 0 0 1 4 4.5V20"/></svg></span>ثبت‌نامی‌ها</a>
+<a class="" href="#content"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg></span>محتوا</a>
+<a class="" href="#activities"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h12a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2V4.5Z"/><path d="M7 20a2 2 0 0 0 2-2V4.5"/></svg></span>فعالیت‌ها</a>
+<a class="" href="#announcements"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></span>اعلان‌ها</a>
+<a class="" href="#wallet"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h15a2 2 0 0 1 2 2v9H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14"/><path d="M16 13h4"/></svg></span>مالی</a></nav>
+  <div class="sidebar-help"><span>✦</span><p><b>همراه هوش‌آرا</b><small>اطلاعات این پنل برای اجرای دقیق‌تر مسیر یادگیری طراحی شده است.</small></p></div>
+</aside>
+<main class="container role-main">
+
+<section class="role-hero supervisor">
+  <div><span class="eyebrow">مرکز مدیریت مجموعه</span><h1>سلام؛ اینجا <em>نبض دوره‌های شماست.</em></h1><p>دوره‌های تحت نمایندگی، مربی‌ها، ثبت‌نامی‌ها، پیشرفت محتوا و بررسی فعالیت‌ها را از یک نقطه مدیریت کنید.</p></div>
+  <div class="role-hero-badge"><b>۲</b><small>دوره تحت مدیریت</small></div>
+</section>
+
+<section class="stat-grid">
+  <article class="stat-card"><span>ثبت‌نامی‌های فعال</span><b>۷۲</b><small>۶ درخواست در انتظار تأیید</small></article>
+  <article class="stat-card stat-card--pink"><span>مربی‌ها</span><b>۸</b><small>در ۲ دوره</small></article>
+  <article class="stat-card stat-card--green"><span>میانگین پیشرفت</span><b>۶۱٪</b><small>بین ثبت‌نامی‌ها</small></article>
+  <article class="stat-card stat-card--gold"><span>کیف پول</span><b>۱۸٫۴م</b><small>تومان · موجودی قابل برداشت</small></article>
+</section>
+
+<section class="dashboard-card">
+  <div class="card-head"><div><span class="eyebrow">دوره‌های من</span><h2>دوره‌های تحت نمایندگی</h2></div><button class="btn btn-soft">افزودن دوره</button></div>
+  <div class="course-admin-list">
+    <div class="course-admin-row"><div class="course-mark pink">هـ</div><div><b>دوره جامع هوش‌آرا</b><small>۴ مربی · ۵۸ ثبت‌نامی · ۶۳٪ پیشرفت محتوا</small></div><span class="status-chip status-chip--done">فعال</span><button class="mini-btn">مدیریت دوره</button></div>
+    <div class="course-admin-row"><div class="course-mark green">خ</div><div><b>دوره خلاقیت کودک</b><small>۴ مربی · ۱۴ ثبت‌نامی · ۴۸٪ پیشرفت محتوا</small></div><span class="status-chip status-chip--done">فعال</span><button class="mini-btn">مدیریت دوره</button></div>
+  </div>
+</section>
+
+<section class="dashboard-grid supervisor-grid">
+  <article class="dashboard-card">
+    <div class="card-head"><div><span class="eyebrow">ثبت‌نامی‌ها</span><h2>آخرین درخواست‌ها</h2></div><a href="#registrations">همه ←</a></div>
+    <div class="registration-row"><div class="student-avatar">م</div><div><b>مهدی حسینی</b><small>هوش‌آرا · پرداخت موفق</small></div><span class="status-chip">در انتظار</span><button class="mini-btn approve">تأیید</button></div>
+    <div class="registration-row"><div class="student-avatar">ف</div><div><b>فاطمه کریمی</b><small>هوش‌آرا · پرداخت در انتظار</small></div><span class="status-chip status-chip--warning">ناقص</span><button class="mini-btn">بررسی</button></div>
+    <div class="registration-row"><div class="student-avatar">ر</div><div><b>رضا محمدی</b><small>خلاقیت کودک · پرداخت موفق</small></div><span class="status-chip">در انتظار</span><button class="mini-btn approve">تأیید</button></div>
+  </article>
+  <article class="dashboard-card">
+    <div class="card-head"><div><span class="eyebrow">مربی‌ها</span><h2>تیم آموزشی</h2></div><button class="mini-btn">تعریف مربی</button></div>
+    <div class="coach-row"><div class="student-avatar">م</div><div><b>مریم احمدی</b><small>هوش‌آرا · ۲۴ دانش‌آموز</small></div><span>فعال</span></div>
+    <div class="coach-row"><div class="student-avatar">س</div><div><b>سارا رضایی</b><small>هوش‌آرا · ۱۷ دانش‌آموز</small></div><span>فعال</span></div>
+    <div class="coach-row"><div class="student-avatar">ن</div><div><b>نیما کریمی</b><small>خلاقیت کودک · ۱۴ دانش‌آموز</small></div><span>فعال</span></div>
+  </article>
+</section>
+
+<section class="dashboard-grid">
+  <article class="dashboard-card">
+    <div class="card-head"><div><span class="eyebrow">محتوا</span><h2>وضعیت دسترسی محتوا</h2></div></div>
+    <div class="content-release"><div><b>تا درس ۸</b><small>برای ثبت‌نامی‌ها باز است</small></div><span class="release-bar"><i style="width:68%"></i></span><b>۶۸٪</b></div>
+    <div class="content-release"><div><b>درس ۹ و ۱۰</b><small>در انتظار تکمیل مسیر</small></div><span class="release-bar"><i style="width:35%"></i></span><b>۳۵٪</b></div>
+    <p class="muted-note">سرپرست نمی‌تواند محتوای اصلی را حذف یا اضافه کند؛ فقط مشخص می‌کند ثبت‌نامی‌ها تا کدام بخش دسترسی داشته باشند.</p>
+  </article>
+  <article class="dashboard-card">
+    <div class="card-head"><div><span class="eyebrow">اعلان</span><h2>ارسال پیام گروهی</h2></div></div>
+    <textarea class="admin-textarea" placeholder="پیام برای مربی‌ها یا دانش‌آموزان..."></textarea>
+    <div class="button-row"><button class="btn btn-soft">مربی‌ها</button><button class="btn btn-primary" onclick="alert('اعلان برای ثبت‌نامی‌های دوره ارسال شد.')">ارسال برای دانش‌آموزان</button></div>
+  </article>
+</section>
+
+<section class="dashboard-card">
+  <div class="card-head"><div><span class="eyebrow">فعالیت‌ها</span><h2>آخرین فعالیت‌های ارسالی</h2></div><a href="#activities">مشاهده همه ←</a></div>
+  <div class="review-admin-row"><div><div class="student-avatar">س</div></div><div><b>سارا محمدی · درس ۳</b><small>بررسی‌شده توسط مریم احمدی</small></div><span class="neuron-tag">۴۵ نورون</span><button class="mini-btn">مشاهده</button></div>
+  <div class="review-admin-row"><div><div class="student-avatar">ع</div></div><div><b>علی رضایی · درس ۴</b><small>در انتظار بررسی مربی</small></div><span class="status-chip">در صف</span><button class="mini-btn">مشاهده</button></div>
+</section>
+
+<section class="dashboard-grid">
+  <article class="dashboard-card">
+    <div class="card-head"><div><span class="eyebrow">مالی ساده</span><h2>کیف پول و پرداخت‌ها</h2></div></div>
+    <div class="wallet-total"><b>۱۸٬۴۲۰٬۰۰۰</b><span>تومان</span></div>
+    <div class="wallet-lines"><div><span>پرداخت‌های این ماه</span><b>۶٬۸۰۰٬۰۰۰</b></div><div><span>در انتظار تسویه</span><b>۲٬۱۰۰٬۰۰۰</b></div></div>
+    <button class="btn btn-soft">مشاهده تراکنش‌ها</button>
+  </article>
+  <article class="dashboard-card">
+    <div class="card-head"><div><span class="eyebrow">نمایه دوره</span><h2>بنر و اطلاعات نمایندگی</h2></div></div>
+    <div class="banner-editor"><div class="media-placeholder small"><span>▧</span><b>بنر دوره</b><small>BANNER_PREVIEW</small></div><button class="btn btn-soft">تغییر بنر</button></div>
+  </article>
+</section>
+
+</main>
+<div class="notification-panel" id="notificationPanel" hidden>
+  <div class="notification-panel-head"><b>اعلانات</b><button id="notificationClose">×</button></div>
+  <div class="notification-item"><span>✦</span><p><b>فعالیت جدید دریافت شد</b><small>یک مورد تازه برای بررسی در پنل شما قرار گرفته است.</small></p></div>
+  <div class="notification-item"><span>●</span><p><b>یادآوری</b><small>گزارش پیشرفت این هفته آماده مشاهده است.</small></p></div>
+</div>
+<script>
+const courseToggle = document.getElementById('courseToggle');
+const courseMenu = document.getElementById('courseMenu');
+const notificationToggle = document.getElementById('notificationToggle');
+const notificationPanel = document.getElementById('notificationPanel');
+const notificationClose = document.getElementById('notificationClose');
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('panelSidebar');
+const overlay = document.getElementById('panelOverlay');
+const sidebarClose = document.getElementById('sidebarClose');
+function closeSidebar() { sidebar.classList.remove('is-open'); overlay.classList.remove('is-visible'); menuToggle.setAttribute('aria-expanded','false'); }
+function closeCourseMenu() { courseMenu.hidden=true; courseToggle.setAttribute('aria-expanded','false'); }
+function openSidebar() { closeCourseMenu(); notificationPanel.hidden=true; sidebar.classList.add('is-open'); overlay.classList.add('is-visible'); menuToggle.setAttribute('aria-expanded','true'); }
+courseToggle.addEventListener('click',()=>{closeSidebar();const open=courseMenu.hidden;courseMenu.hidden=!open;courseToggle.setAttribute('aria-expanded',String(open));notificationPanel.hidden=true;});
+document.querySelectorAll('.course-option').forEach(option=>option.addEventListener('click',()=>{document.querySelectorAll('.course-option').forEach(item=>item.classList.remove('is-selected'));option.classList.add('is-selected');closeCourseMenu();}));
+menuToggle.addEventListener('click',openSidebar); sidebarClose.addEventListener('click',closeSidebar); overlay.addEventListener('click',closeSidebar);
+notificationToggle.addEventListener('click',()=>{closeSidebar();closeCourseMenu();notificationPanel.hidden=!notificationPanel.hidden;});
+notificationClose.addEventListener('click',()=>notificationPanel.hidden=true);
+document.querySelectorAll('.panel-side-nav a').forEach(a=>a.addEventListener('click',closeSidebar));
+document.addEventListener('click',event=>{if(!event.target.closest('.course-switcher'))closeCourseMenu();if(!event.target.closest('.notification-panel')&&!event.target.closest('.notification-trigger'))notificationPanel.hidden=true;});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="پشتیبانی دانش‌آموز | دوره جامع هوش‌آرا">
+<title>پشتیبانی دانش‌آموز | هوش‌آرا</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="role-panel-page support-student-page">
+<header class="site-header panel-header">
+  <div class="container panel-nav">
+    <div class="panel-nav-side panel-nav-right">
+      <button class="nav-toggle" type="button" id="menuToggle" aria-label="باز کردن منو" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="panel-brand" href="panel.html" aria-label="دوره جامع هوش‌آرا"><span class="panel-brand-mark">هـ</span><strong>دوره جامع هوش‌آرا</strong></a>
+    </div>
+    <div class="panel-nav-side panel-nav-left">
+      <div class="course-switcher">
+        <button class="panel-icon-btn course-switch-btn" id="courseToggle" type="button" aria-expanded="false" aria-label="انتخاب دوره"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h8M12 8v8"></path></svg></button>
+        <div class="panel-popover course-popover" id="courseMenu" hidden><strong>دوره‌های من</strong><button class="course-option is-selected" type="button"><span class="course-option-dot"></span>دوره جامع هوش‌آرا<small>در حال یادگیری</small></button><button class="course-option" type="button"><span class="course-option-dot course-option-dot--muted"></span>دوره خلاقیت کودک<small>قابل ثبت‌نام</small></button><button class="course-option" type="button"><span class="course-option-dot course-option-dot--muted"></span>مهارت‌های ذهنی<small>دوره‌های دیگر</small></button></div>
+      </div>
+      <button class="panel-icon-btn notification-trigger" id="notificationToggle" type="button" aria-label="اعلانات" title="اعلانات"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"></path></svg><i></i></button>
+    </div>
+  </div>
+</header>
+<div class="panel-overlay" id="panelOverlay"></div>
+<aside class="panel-sidebar role-sidebar" id="panelSidebar">
+  <button class="panel-sidebar-close" id="sidebarClose" type="button">×</button>
+  <div class="sidebar-profile">
+    <div class="avatar avatar-user"><span>م</span></div>
+    <strong>مریم احمدی</strong>
+    <small>شرکت‌کننده دوره</small>
+    <div class="sidebar-neuron-balance" aria-label="موجودی ۲۸۵ نورون">
+      <span class="sidebar-neuron-icon" aria-hidden="true">✦</span>
+      <span><small>موجودی نورون</small><b>۲۸۵ <small>نورون</small></b></span>
+    </div>
+    <div class="sidebar-course-progress">
+      <div class="sidebar-course-progress-caption"><span>پیشرفت دوره</span><b>۶۵٪ مانده</b></div>
+      <div class="sidebar-course-progress-track" role="progressbar" aria-label="پیشرفت دوره" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-valuetext="۳۵ درصد طی شده، ۶۵ درصد تا پایان مانده">
+        <span style="width:35%"></span>
+      </div>
+    </div>
+  </div>
+  <nav class="panel-side-nav">
+    <a href="panel.html#home"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg></span>صفحه نخست</a>
+    <a class="is-active" href="support-student.html"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-4-.9L3 20l1.4-4.1a8 8 0 1 1 15.6-4.4Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span>گفتگو</a>
+    <a href="panel.html#about-us"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span>درباره ما</a>
+    <a href="panel.html#contact"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>تماس با ما</a>
+  </nav>
+  <div class="sidebar-help"><span>✦</span><p><b>همراه شما هستیم</b><small>برای ادامه مسیر یادگیری، هر زمان به کمک نیاز داشتید با ما در ارتباط باشید.</small></p></div>
+</aside>
+<main class="container role-main">
+
+<section class="support-header">
+  <div><span class="eyebrow">پشتیبانی</span><h1>سؤال داری؟ <em>با ما در ارتباط باش.</em></h1><p>مسائل فنی و پرسش‌های محتوایی را در دو مسیر جدا پیگیری کن تا پاسخ دقیق‌تری بگیری.</p></div>
+  <button class="btn btn-primary" id="openNewConversation" type="button">شروع گفت‌وگوی تازه</button>
+</section>
+<section class="new-ticket" id="newTicket" hidden aria-labelledby="newConversationTitle">
+  <div class="new-conversation-heading"><span class="eyebrow">گفت‌وگوی تازه</span><h2 id="newConversationTitle">چطور می‌تونیم کمکت کنیم؟</h2><p>موضوع را انتخاب کن و توضیحت را برای پشتیبان بفرست.</p></div>
+  <div class="new-ticket-grid"><button class="is-selected" type="button" data-new-type="technical"><b>مسئله فنی</b><small>ورود، فایل، پخش رسانه و مشکلات پنل</small></button><button type="button" data-new-type="content"><b>پرسش محتوایی</b><small>درس، فعالیت، بازخورد و نورون</small></button></div>
+  <label class="new-conversation-label" for="newConversationSubject">عنوان گفت‌وگو</label>
+  <input id="newConversationSubject" class="new-conversation-input" type="text" placeholder="مثلاً راهنمای فعالیت درس سوم" required aria-required="true">
+  <label class="new-conversation-label" for="newConversationMessage">توضیحات</label>
+  <textarea id="newConversationMessage" class="new-conversation-input new-conversation-textarea" placeholder="موضوعت را با جزئیات بنویس..." required aria-required="true"></textarea>
+  <p class="conversation-form-alert" id="conversationFormAlert" role="alert" hidden>برای ایجاد گفت‌وگو، عنوان و توضیحات را وارد کن.</p>
+  <div class="new-conversation-actions"><button class="btn btn-primary" id="createConversation" type="button">ایجاد گفت‌وگو</button><button class="btn btn-ghost" id="cancelNewConversation" type="button">انصراف</button></div>
+</section>
+<section class="support-tabs"><button class="is-active" data-tab="all">همه</button><button data-tab="technical">فنی</button><button data-tab="content">محتوایی</button></section>
+<section class="ticket-layout" id="tickets">
+  <article class="ticket-list">
+    <div class="ticket-item is-active" data-type="content"><span class="ticket-dot content"></span><div><b>درباره نورون فعالیت درس ۳</b><small>محتوایی · امروز · پاسخ داده شده</small></div><span class="status-chip status-chip--done">بسته</span></div>
+    <div class="ticket-item" data-type="technical"><span class="ticket-dot technical"></span><div><b>باز نشدن فایل ویدئویی</b><small>فنی · دیروز · در حال پیگیری</small></div><span class="status-chip">باز</span></div>
+    <div class="ticket-item" data-type="content"><span class="ticket-dot content"></span><div><b>راهنمای فعالیت خانگی</b><small>محتوایی · ۲۸ شهریور · پاسخ داده شده</small></div><span class="status-chip status-chip--done">بسته</span></div>
+  </article>
+  <article class="ticket-chat" id="ticketChat">
+    <div class="chat-head"><div class="support-avatar">پ</div><div><b id="chatTitle">درباره نورون فعالیت درس ۳</b><small id="chatMeta">گفت‌وگوی محتوایی · #HS-1042</small></div></div>
+    <div class="chat-messages" id="chatMessages"><div class="message other">سلام مریم جان، بررسی فعالیت درس ۳ انجام شده و ۴۵ نورون برایت ثبت شده است.<small>پشتیبانی · ۱۰:۳۵</small></div><div class="message me">ممنون، بازخورد مربی را هم دیدم. اگر درباره دلیل امتیاز سؤال داشته باشم از همین‌جا بپرسم؟<small>شما · ۱۰:۴۸</small></div></div>
+    <div class="chat-compose"><textarea id="chatInput" placeholder="پیام خودت را بنویس..."></textarea><div class="chat-compose-actions"><label class="chat-attach-btn" for="chatAttachment" title="افزودن فایل" aria-label="افزودن فایل"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.4 11.1-8.9 8.9a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></svg><input id="chatAttachment" type="file" multiple></label><button class="btn btn-primary" id="sendChat" type="button">ارسال</button></div><div class="chat-attachments" id="chatAttachments" aria-live="polite"></div></div>
+  </article>
+</section>
+
+</main>
+<div class="notification-panel" id="notificationPanel" hidden>
+  <div class="notification-panel-head"><b>اعلانات</b><button id="notificationClose">×</button></div>
+  <div class="notification-item"><span>✦</span><p><b>فعالیت جدید دریافت شد</b><small>یک مورد تازه برای بررسی در پنل شما قرار گرفته است.</small></p></div>
+  <div class="notification-item"><span>●</span><p><b>یادآوری</b><small>گزارش پیشرفت این هفته آماده مشاهده است.</small></p></div>
+</div>
+<script>
+const courseToggle = document.getElementById('courseToggle');
+const courseMenu = document.getElementById('courseMenu');
+const notificationToggle = document.getElementById('notificationToggle');
+const notificationPanel = document.getElementById('notificationPanel');
+const notificationClose = document.getElementById('notificationClose');
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('panelSidebar');
+const overlay = document.getElementById('panelOverlay');
+const sidebarClose = document.getElementById('sidebarClose');
+function closeSidebar() { sidebar.classList.remove('is-open'); overlay.classList.remove('is-visible'); menuToggle.setAttribute('aria-expanded','false'); }
+function closeCourseMenu() { courseMenu.hidden=true; courseToggle.setAttribute('aria-expanded','false'); }
+function openSidebar() { closeCourseMenu(); notificationPanel.hidden=true; sidebar.classList.add('is-open'); overlay.classList.add('is-visible'); menuToggle.setAttribute('aria-expanded','true'); }
+courseToggle.addEventListener('click',()=>{closeSidebar();const open=courseMenu.hidden;courseMenu.hidden=!open;courseToggle.setAttribute('aria-expanded',String(open));notificationPanel.hidden=true;});
+document.querySelectorAll('.course-option').forEach(option=>option.addEventListener('click',()=>{document.querySelectorAll('.course-option').forEach(item=>item.classList.remove('is-selected'));option.classList.add('is-selected');closeCourseMenu();}));
+menuToggle.addEventListener('click',openSidebar); sidebarClose.addEventListener('click',closeSidebar); overlay.addEventListener('click',closeSidebar);
+notificationToggle.addEventListener('click',()=>{closeSidebar();closeCourseMenu();notificationPanel.hidden=!notificationPanel.hidden;});
+notificationClose.addEventListener('click',()=>notificationPanel.hidden=true);
+document.querySelectorAll('.panel-side-nav a').forEach(a=>a.addEventListener('click',closeSidebar));
+document.addEventListener('click',event=>{if(!event.target.closest('.course-switcher'))closeCourseMenu();if(!event.target.closest('.notification-panel')&&!event.target.closest('.notification-trigger'))notificationPanel.hidden=true;});
+
+const conversations=[
+ {title:'درباره نورون فعالیت درس ۳',type:'content',id:'HS-1042',reply:'سلام مریم جان، بررسی فعالیت درس ۳ انجام شده و ۴۵ نورون برایت ثبت شده است.'},
+ {title:'باز نشدن فایل ویدئویی',type:'technical',id:'HS-1038',reply:'سلام، در حال بررسی مشکل پخش ویدئوی درس هستیم. لطفاً یک بار صفحه را تازه‌سازی کن.'},
+ {title:'راهنمای فعالیت خانگی',type:'content',id:'HS-0991',reply:'فعالیت پیشنهادی همان فعالیت داخل درس است و می‌توانی نتیجه را از همین بخش ارسال کنی.'}
+];
+let activeConversation=0;
+let selectedNewType='technical';
+const chatInput=document.getElementById('chatInput');
+const chatMessages=document.getElementById('chatMessages');
+const attachmentInput=document.getElementById('chatAttachment');
+const attachmentList=document.getElementById('chatAttachments');
+function openTicket(i){activeConversation=i;document.querySelectorAll('.ticket-item').forEach((item,index)=>item.classList.toggle('is-active',index===i));document.getElementById('chatTitle').textContent=conversations[i].title;document.getElementById('chatMeta').textContent=`گفت‌وگوی ${conversations[i].type==='technical'?'فنی':'محتوایی'} · #${conversations[i].id}`;chatMessages.replaceChildren();if(conversations[i].reply){const reply=document.createElement('div');reply.className='message other';reply.append(conversations[i].reply);const meta=document.createElement('small');meta.textContent='پشتیبانی · امروز';reply.append(meta);chatMessages.append(reply);} }
+function renderAttachments(){attachmentList.replaceChildren();Array.from(attachmentInput.files||[]).forEach((file,index)=>{const chip=document.createElement('span');chip.className='attachment-chip';chip.textContent=`${file.name} · ${Math.ceil(file.size/1024)} کیلوبایت`;attachmentList.append(chip);});}
+attachmentInput.addEventListener('change',renderAttachments);
+function appendAttachment(message,file){const item=document.createElement('span');item.className='message-attachment';item.textContent=`📎 ${file.name}`;message.append(item);}
+document.querySelectorAll('.ticket-item').forEach(item=>item.addEventListener('click',()=>openTicket(Array.from(document.querySelectorAll('.ticket-item')).indexOf(item))));
+document.querySelectorAll('.support-tabs button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.support-tabs button').forEach(b=>b.classList.remove('is-active'));btn.classList.add('is-active');const t=btn.dataset.tab;document.querySelectorAll('.ticket-item').forEach(x=>x.style.display=(t==='all'||x.dataset.type===t)?'flex':'none');}));
+document.getElementById('sendChat').addEventListener('click',()=>{const text=chatInput.value.trim();const files=Array.from(attachmentInput.files||[]);if(!text&&!files.length)return;const message=document.createElement('div');message.className='message me';if(text)message.append(document.createTextNode(text));files.forEach(file=>appendAttachment(message,file));const meta=document.createElement('small');meta.textContent='شما · اکنون';message.append(meta);chatMessages.append(message);chatMessages.scrollTop=chatMessages.scrollHeight;chatInput.value='';attachmentInput.value='';renderAttachments();});
+const newConversation=document.getElementById('newTicket');
+document.getElementById('openNewConversation').addEventListener('click',()=>{newConversation.hidden=false;newConversation.scrollIntoView({behavior:'smooth',block:'start'});});
+document.getElementById('cancelNewConversation').addEventListener('click',()=>{newConversation.hidden=true;});
+document.querySelectorAll('[data-new-type]').forEach(button=>button.addEventListener('click',()=>{selectedNewType=button.dataset.newType;document.querySelectorAll('[data-new-type]').forEach(item=>item.classList.toggle('is-selected',item===button));}));
+document.getElementById('createConversation').addEventListener('click',()=>{const title=document.getElementById('newConversationSubject').value.trim();const body=document.getElementById('newConversationMessage').value.trim();if(!title||!body){const missing=!title?document.getElementById('newConversationSubject'):document.getElementById('newConversationMessage');missing.classList.add('is-invalid');missing.setAttribute('aria-invalid','true');return;}const id=`HS-${String(1043+conversations.length-3).padStart(4,'0')}`;conversations.unshift({title,type:selectedNewType,id,reply:''});const item=document.createElement('div');item.className='ticket-item';item.dataset.type=selectedNewType;const dot=document.createElement('span');dot.className=`ticket-dot ${selectedNewType}`;const details=document.createElement('div');const name=document.createElement('b');name.textContent=title;const meta=document.createElement('small');meta.textContent=`${selectedNewType==='technical'?'فنی':'محتوایی'} · اکنون · در حال پیگیری`;details.append(name,meta);const status=document.createElement('span');status.className='status-chip';status.textContent='باز';item.append(dot,details,status);document.querySelector('.ticket-list').prepend(item);item.dataset.conversationId=id;item.addEventListener('click',()=>openTicket(conversations.findIndex(entry=>entry.id===item.dataset.conversationId)));document.querySelectorAll('.ticket-item').forEach((entry,index)=>entry.classList.toggle('is-active',index===0));activeConversation=0;document.getElementById('chatTitle').textContent=title;document.getElementById('chatMeta').textContent=`گفت‌وگوی ${selectedNewType==='technical'?'فنی':'محتوایی'} · #${id}`;chatMessages.replaceChildren();const firstMessage=document.createElement('div');firstMessage.className='message me';firstMessage.append(document.createTextNode(body));const sent=document.createElement('small');sent.textContent='شما · اکنون';firstMessage.append(sent);chatMessages.append(firstMessage);document.getElementById('newConversationSubject').value='';document.getElementById('newConversationMessage').value='';newConversation.hidden=true;document.getElementById('tickets').scrollIntoView({behavior:'smooth',block:'start'});});
+const conversationFormAlert=document.getElementById('conversationFormAlert');
+document.getElementById('createConversation').addEventListener('click',()=>{if(newConversation.hidden)return;const subject=document.getElementById('newConversationSubject');const details=document.getElementById('newConversationMessage');if(!subject.value.trim()||!details.value.trim()){conversationFormAlert.hidden=false;subject.classList.toggle('is-invalid',!subject.value.trim());details.classList.toggle('is-invalid',!details.value.trim());subject.setAttribute('aria-invalid',String(!subject.value.trim()));details.setAttribute('aria-invalid',String(!details.value.trim()));}});
+['newConversationSubject','newConversationMessage'].forEach(id=>document.getElementById(id).addEventListener('input',event=>{event.target.classList.remove('is-invalid');event.target.setAttribute('aria-invalid','false');if(document.getElementById('newConversationSubject').value.trim()&&document.getElementById('newConversationMessage').value.trim())conversationFormAlert.hidden=true;}));
+
+</script>
+</body>
+</html>
