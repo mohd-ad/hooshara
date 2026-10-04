@@ -36,10 +36,20 @@
     .student-panel-page .module-title { min-width: 0; text-align: right; }
     .student-panel-page .module-title b,
     .student-panel-page .module-title small { overflow-wrap: anywhere; }
-    .student-panel-page .lesson-card { min-width: 0; }
+    .student-panel-page .lesson-card { position: relative; min-width: 0; }
     .student-panel-page .lesson-card b,
     .student-panel-page .lesson-card small { max-width: 100%; overflow-wrap: anywhere; }
-    .student-panel-page .lesson-neuron-badge { display:inline-flex; align-items:center; gap:3px; margin-top:5px; padding:3px 8px; border:1px solid rgba(216,161,59,.18); border-radius:999px; background:var(--cream); color:var(--gold-dark); font-size:9px; font-weight:700; white-space:nowrap; }
+    .student-panel-page .lesson-neuron-badge { position:absolute; z-index:4; top:6px; left:6px; display:inline-flex; align-items:center; gap:3px; padding:3px 7px; border:1px solid rgba(216,161,59,.2); border-radius:999px; background:rgba(255,253,253,.95); color:var(--gold-dark); font-size:9px; font-weight:800; line-height:1.3; direction:ltr; white-space:nowrap; box-shadow:0 3px 10px rgba(72,51,60,.08); }
+    .student-panel-page .lesson-neuron-badge { font-size:0; }
+    .student-panel-page .lesson-neuron-badge::before { content:"✦"; font-size:9px; }
+    .student-panel-page .lesson-neuron-badge::after { font-size:9px; }
+    .student-panel-page .curriculum-item:nth-child(1) .lesson-card:nth-child(1) .lesson-neuron-badge::after,
+    .student-panel-page .curriculum-item:nth-child(1) .lesson-card:nth-child(2) .lesson-neuron-badge::after { content:"۱۵/۱۵"; }
+    .student-panel-page .curriculum-item:nth-child(1) .lesson-card:nth-child(n+3) .lesson-neuron-badge::after,
+    .student-panel-page .curriculum-item:nth-child(3) .lesson-neuron-badge::after,
+    .student-panel-page .curriculum-item:nth-child(4) .lesson-neuron-badge::after { content:"۰/۱۵"; }
+    .student-panel-page .curriculum-item:nth-child(2) .lesson-card:nth-child(1) .lesson-neuron-badge::after { content:"۱۰/۱۰"; }
+    .student-panel-page .curriculum-item:nth-child(2) .lesson-card:nth-child(n+2) .lesson-neuron-badge::after { content:"۰/۱۰"; }
     .student-panel-page .lesson-card.is-locked .lesson-neuron-badge { border-color:var(--line); background:#faf7f7; color:var(--muted); }
     .student-panel-page .module-neurons { direction:rtl; }
     .student-panel-page .panel-bottom-links > div { min-width: 0; }
