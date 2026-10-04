@@ -39,6 +39,9 @@
     .student-panel-page .lesson-card { min-width: 0; }
     .student-panel-page .lesson-card b,
     .student-panel-page .lesson-card small { max-width: 100%; overflow-wrap: anywhere; }
+    .student-panel-page .lesson-neuron-badge { display:inline-flex; align-items:center; gap:3px; margin-top:5px; padding:3px 8px; border:1px solid rgba(216,161,59,.18); border-radius:999px; background:var(--cream); color:var(--gold-dark); font-size:9px; font-weight:700; white-space:nowrap; }
+    .student-panel-page .lesson-card.is-locked .lesson-neuron-badge { border-color:var(--line); background:#faf7f7; color:var(--muted); }
+    .student-panel-page .module-neurons { direction:rtl; }
     .student-panel-page .panel-bottom-links > div { min-width: 0; }
     .student-panel-page .panel-bottom-links > div > div { min-width: 0; }
     .student-panel-page .panel-bottom-links a { white-space: nowrap; }
@@ -128,7 +131,7 @@
     <nav class="panel-side-nav">
       <a class="is-active" href="#home"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg></span> صفحه نخست</a>
       <a href="support-student.html"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-4-.9L3 20l1.4-4.1a8 8 0 1 1 15.6-4.4Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span> گفتگو</a>
-      <a href="#about-us"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span> درباره ما</a>
+      <a href="#about-us"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span> درباره دوره</a>
       <a href="#contact"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span> تماس با ما</a>
     </nav>
     <div class="sidebar-help"><span>✦</span><p><b>همراه شما هستیم</b><small>برای ادامه مسیر یادگیری، هر زمان به کمک نیاز داشتید با ما در ارتباط باشید.</small></p></div>
@@ -186,38 +189,38 @@
 
       <div class="curriculum-list">
         <details class="curriculum-item" open>
-          <summary><span class="module-number">۰۱</span><span class="module-title"><b>آشنایی با دنیای هوش</b><small>۴ درس · ۲ درس تکمیل‌شده</small></span><span class="module-neurons">✦ ۶۰ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <summary><span class="module-number">۰۱</span><span class="module-title"><b>آشنایی با دنیای هوش</b><small>۴ درس · ۲ درس تکمیل‌شده</small></span><span class="module-neurons" aria-label="۳۰ نورون دریافت‌شده از ۶۰ نورون قابل دریافت">✦ ۳۰/۶۰ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
           <div class="lesson-grid">
-            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-01.webp" alt=""><span class="lesson-placeholder">۱</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>درس اول</b><small>هوش یعنی چی؟</small></a>
-            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-02.webp" alt=""><span class="lesson-placeholder">۲</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>استعدادهای من</b><small>درس دوم</small></a>
-            <a class="lesson-card is-available" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-03.webp" alt=""><span class="lesson-placeholder">۳</span></span><b>کشف توانایی‌ها</b><small>درس سوم</small></a>
-            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-04.webp" alt=""><span class="lesson-placeholder">۴</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرین و تجربه</b><small>درس چهارم</small></a>
+            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-01.webp" alt=""><span class="lesson-placeholder">۱</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>درس اول</b><small>هوش یعنی چی؟</small><span class="lesson-neuron-badge" aria-label="۱۵ نورون از ۱۵ نورون">✦ ۱۵/۱۵ نورون</span></a>
+            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-02.webp" alt=""><span class="lesson-placeholder">۲</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>استعدادهای من</b><small>درس دوم</small><span class="lesson-neuron-badge" aria-label="۱۵ نورون از ۱۵ نورون">✦ ۱۵/۱۵ نورون</span></a>
+            <a class="lesson-card is-available" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-03.webp" alt=""><span class="lesson-placeholder">۳</span></span><b>کشف توانایی‌ها</b><small>درس سوم</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۵ نورون">✦ ۰/۱۵ نورون</span></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-04.webp" alt=""><span class="lesson-placeholder">۴</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرین و تجربه</b><small>درس چهارم</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۵ نورون">✦ ۰/۱۵ نورون</span></a>
           </div>
         </details>
 
         <details class="curriculum-item">
-          <summary><span class="module-number module-number--pink">۰۲</span><span class="module-title"><b>پرورش خلاقیت</b><small>۳ درس · ۱ درس تکمیل‌شده</small></span><span class="module-neurons">✦ ۳۰ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <summary><span class="module-number module-number--pink">۰۲</span><span class="module-title"><b>پرورش خلاقیت</b><small>۳ درس · ۱ درس تکمیل‌شده</small></span><span class="module-neurons" aria-label="۱۰ نورون دریافت‌شده از ۳۰ نورون قابل دریافت">✦ ۱۰/۳۰ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
           <div class="lesson-grid">
-            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-05.webp" alt=""><span class="lesson-placeholder">۱</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>ذهن خلاق من</b><small>درس اول</small></a>
-            <a class="lesson-card is-available" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-06.webp" alt=""><span class="lesson-placeholder">۲</span></span><b>ایده‌های تازه</b><small>درس دوم</small></a>
-            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-07.webp" alt=""><span class="lesson-placeholder">۳</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>بازی با خیال</b><small>درس سوم</small></a>
+            <a class="lesson-card is-complete" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-05.webp" alt=""><span class="lesson-placeholder">۱</span><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></i></span><b>ذهن خلاق من</b><small>درس اول</small><span class="lesson-neuron-badge" aria-label="۱۰ نورون از ۱۰ نورون">✦ ۱۰/۱۰ نورون</span></a>
+            <a class="lesson-card is-available" href="lesson.html"><span class="lesson-thumb"><img src="assets/images/lesson-06.webp" alt=""><span class="lesson-placeholder">۲</span></span><b>ایده‌های تازه</b><small>درس دوم</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۰ نورون">✦ ۰/۱۰ نورون</span></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-07.webp" alt=""><span class="lesson-placeholder">۳</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>بازی با خیال</b><small>درس سوم</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۰ نورون">✦ ۰/۱۰ نورون</span></a>
           </div>
         </details>
 
         <details class="curriculum-item">
-          <summary><span class="module-number module-number--green">۰۳</span><span class="module-title"><b>تقویت مهارت‌های ذهنی</b><small>۳ درس · در انتظار شروع</small></span><span class="module-neurons is-empty">۰ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <summary><span class="module-number module-number--green">۰۳</span><span class="module-title"><b>تقویت مهارت‌های ذهنی</b><small>۳ درس · در انتظار شروع</small></span><span class="module-neurons is-empty" aria-label="۰ نورون دریافت‌شده از ۴۵ نورون قابل دریافت">✦ ۰/۴۵ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
           <div class="lesson-grid">
-            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-08.webp" alt=""><span class="lesson-placeholder">۱</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرکز و دقت</b><small>درس اول</small></a>
-            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-09.webp" alt=""><span class="lesson-placeholder">۲</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>حافظه پویا</b><small>درس دوم</small></a>
-            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-10.webp" alt=""><span class="lesson-placeholder">۳</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>حل مسئله</b><small>درس سوم</small></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-08.webp" alt=""><span class="lesson-placeholder">۱</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرکز و دقت</b><small>درس اول</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۵ نورون">✦ ۰/۱۵ نورون</span></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-09.webp" alt=""><span class="lesson-placeholder">۲</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>حافظه پویا</b><small>درس دوم</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۵ نورون">✦ ۰/۱۵ نورون</span></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-10.webp" alt=""><span class="lesson-placeholder">۳</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>حل مسئله</b><small>درس سوم</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۵ نورون">✦ ۰/۱۵ نورون</span></a>
           </div>
         </details>
 
         <details class="curriculum-item">
-          <summary><span class="module-number module-number--gold">۰۴</span><span class="module-title"><b>یادگیری در کنار خانواده</b><small>۲ درس · در انتظار شروع</small></span><span class="module-neurons is-empty">۰ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <summary><span class="module-number module-number--gold">۰۴</span><span class="module-title"><b>یادگیری در کنار خانواده</b><small>۲ درس · در انتظار شروع</small></span><span class="module-neurons is-empty" aria-label="۰ نورون دریافت‌شده از ۳۰ نورون قابل دریافت">✦ ۰/۳۰ نورون</span><span class="module-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
           <div class="lesson-grid">
-            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-11.webp" alt=""><span class="lesson-placeholder">۱</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>بازی و همراهی</b><small>درس اول</small></a>
-            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-12.webp" alt=""><span class="lesson-placeholder">۲</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرین در خانه</b><small>درس دوم</small></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-11.webp" alt=""><span class="lesson-placeholder">۱</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>بازی و همراهی</b><small>درس اول</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۵ نورون">✦ ۰/۱۵ نورون</span></a>
+            <a class="lesson-card is-locked" href="#"><span class="lesson-thumb"><img src="assets/images/lesson-12.webp" alt=""><span class="lesson-placeholder">۲</span><i class="lock-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></i></span><b>تمرین در خانه</b><small>درس دوم</small><span class="lesson-neuron-badge" aria-label="۰ نورون از ۱۵ نورون">✦ ۰/۱۵ نورون</span></a>
           </div>
         </details>
       </div>
@@ -232,11 +235,12 @@
       <a class="btn btn-primary" href="support-student.html">ورود به پشتیبانی ←</a>
     </section>
 
-    <section class="panel-bottom-links " style="align-items: center; width: 100%;" aria-label="اطلاعات بیشتر">
+    <!-- <section class="panel-bottom-links " style="align-items: center; width: 100%;" aria-label="اطلاعات بیشتر"> -->
       <!-- <div id="conversation"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-4-.9L3 20l1.4-4.1a8 8 0 1 1 15.6-4.4Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span><div><b>گفتگو با پشتیبانی</b><small>برای پرسش‌ها و راهنمایی در مسیر یادگیری</small></div><a href="#conversation">شروع گفتگو ←</a></div> -->
-      <div id="about-us"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span><div><b>درباره هوش‌آرا</b><small>آشنایی بیشتر با مسیر آموزشی ما</small></div><a href="#about-us">بیشتر بدانید ←</a></div>
-      <div id="contact"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>تماس با ما</b><small>راه‌های ارتباط با تیم هوش‌آرا</small></div><a href="mailto:info@example.com">ارتباط ←</a></div>
-    </section>
+      <!-- <div id="about-us"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span><div><b>درباره هوش‌آرا</b><small>آشنایی بیشتر با مسیر آموزشی ما</small></div><a href="#about-us">بیشتر بدانید ←</a></div> -->
+      <!-- <div id="contact"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>تماس با ما</b><small>راه‌های ارتباط با تیم هوش‌آرا</small></div><a href="mailto:info@example.com">ارتباط ←</a></div> -->
+    <!-- </section> -->
+    
     <footer class="panel-footer">با عشق برای مسیر رشد و یادگیری شما <span>♥</span></footer>
   </main>
 

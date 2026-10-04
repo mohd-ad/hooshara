@@ -88,7 +88,7 @@
     <nav class="panel-side-nav">
       <a class="is-active" href="panel.html#home"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg></span> صفحه نخست</a>
       <a href="support-student.html"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-4-.9L3 20l1.4-4.1a8 8 0 1 1 15.6-4.4Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span> گفتگو</a>
-      <a href="panel.html#about-us"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span> درباره ما</a>
+      <a href="panel.html#about-us"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span> درباره دوره</a>
       <a href="panel.html#contact"><span class="side-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span> تماس با ما</a>
     </nav>
 
@@ -110,8 +110,10 @@
       </a>
 
       <div class="lesson-meta">
-        <span class="lesson-meta-pill">درس سوم</span>
-        <span>آشنایی با دنیای هوش</span>
+        <div class="lesson-meta-neurons" aria-label="۱۵ نورون قابل دریافت از این درس">
+          <span aria-hidden="true">✦</span>
+          <span><small>نورون قابل دریافت</small><b>۱۵ نورون</b></span>
+        </div>
       </div>
     </div>
 
@@ -172,20 +174,41 @@
           <span class="lesson-section-number">۰۲</span>
           <div>
             <h2>ویدئوی درس</h2>
-            <p>جایگاه آماده برای محتوای ویدئویی</p>
+            <p>ماجرای خندق را تماشا کن.</p>
           </div>
         </div>
 
         <div class="lesson-media">
           <div class="lesson-media-label">
             <b>ویدئوی آموزشی</b>
-            <span>مرجع رسانه بعداً اضافه می‌شود</span>
+            <span>ماجرای خندق</span>
           </div>
-          <div class="lesson-media-placeholder">
-            <div class="lesson-media-placeholder-inner">
-              <span class="lesson-media-icon">▶</span>
-              <strong>جای ویدئوی درس</strong>
-              <small>VIDEO_REFERENCE_HERE</small>
+          <div class="lesson-video-player">
+            <div class="lesson-video-stage">
+              <video class="lesson-video-native" controls playsinline preload="metadata" poster="assets/images/trench-lesson-poster.jpg" aria-label="ویدئوی آموزشی ماجرای خندق">
+                <source src="assets/video/trench-lesson.mp4?v=1" type="video/mp4">
+                مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+              </video>
+              <button class="lesson-video-center-play" type="button" aria-label="پخش ویدئو" title="پخش ویدئو">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5-10-6.5Z"></path></svg>
+              </button>
+              <div class="lesson-video-controls">
+                <button class="lesson-video-play" type="button" aria-label="پخش ویدئو" aria-pressed="false" title="پخش ویدئو">
+                  <svg class="lesson-video-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5-10-6.5Z"></path></svg>
+                  <svg class="lesson-video-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM15 5h3v14h-3z"></path></svg>
+                </button>
+                <span class="lesson-video-current">۰:۰۰</span>
+                <input class="lesson-video-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="موقعیت پخش ویدئو">
+                <span class="lesson-video-duration">۰:۰۰</span>
+                <button class="lesson-video-mute" type="button" aria-label="بی‌صدا کردن ویدئو" aria-pressed="false" title="بی‌صدا کردن">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"></path><path class="lesson-video-volume-waves" d="M15 9a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"></path><path class="lesson-video-muted-mark" d="m16 9 5 6m0-6-5 6"></path></svg>
+                </button>
+                <input class="lesson-video-volume" type="range" min="0" max="1" value="1" step="0.05" aria-label="میزان صدا">
+                <button class="lesson-video-fullscreen" type="button" aria-label="نمایش تمام‌صفحه" title="نمایش تمام‌صفحه">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"></path></svg>
+                </button>
+              </div>
+              <span class="lesson-video-status" aria-live="polite"></span>
             </div>
           </div>
         </div>
@@ -220,23 +243,39 @@
           <span class="lesson-section-number">۰۴</span>
           <div>
             <h2>محتوای صوتی</h2>
-            <p>جایگاه آماده برای فایل صوتی درس</p>
+            <p>به ماجرای کیف بهار گوش کن.</p>
           </div>
         </div>
 
         <div class="lesson-media lesson-media--audio">
           <div class="lesson-media-label">
-            <b>فایل صوتی</b>
-            <span>مرجع صوت بعداً اضافه می‌شود</span>
+            <b>قصه‌ی درس</b>
+            <span>ماجرای کیف بهار</span>
           </div>
-          <div class="lesson-media-placeholder">
-            <div class="lesson-media-placeholder-inner">
-              <span class="lesson-media-icon">♫</span>
-              <strong>جای فایل صوتی درس</strong>
-              <div class="lesson-audio-wave" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <div class="lesson-audio-player">
+            <div class="lesson-audio-player-heading">
+              <div>
+                <strong>ماجرای کیف بهار</strong>
+                <small class="lesson-audio-status" aria-live="polite">آماده‌ی پخش</small>
               </div>
-              <small>AUDIO_REFERENCE_HERE</small>
+            </div>
+            <audio class="lesson-audio-native" controls preload="metadata" aria-label="صوت ماجرای کیف بهار">
+              <source src="assets/sound/spring-bag-story.mp3?v=2" type="audio/mpeg">
+              مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+            </audio>
+            <div class="lesson-audio-controls">
+              <button class="lesson-audio-play" type="button" aria-label="پخش صوت" aria-pressed="false" title="پخش صوت">
+                <svg class="lesson-audio-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5-10-6.5Z"></path></svg>
+                <svg class="lesson-audio-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM15 5h3v14h-3z"></path></svg>
+              </button>
+              <div class="lesson-audio-wave-track">
+                <div class="lesson-audio-wave" aria-hidden="true"></div>
+                <input class="lesson-audio-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="موقعیت پخش صوت">
+              </div>
+            </div>
+            <div class="lesson-audio-timeline">
+              <span class="lesson-audio-current">۰:۰۰</span>
+              <span class="lesson-audio-duration">۰:۰۰</span>
             </div>
           </div>
         </div>
@@ -356,24 +395,24 @@
       </div>
     </section>
 
-    <section class="lesson-review-result" aria-label="نتیجه بررسی فعالیت" hidden>
+    <section class="lesson-review-result" aria-label="نتیجه بررسی فعالیت">
       <div class="review-result-top">
         <div class="review-result-icon">✓</div>
         <div>
-          <span class="eyebrow">نتیجه بررسی فعالیت</span>
-          <h2>فعالیتت توسط مربی بررسی شده است.</h2>
+          <span class="eyebrow">فعالیت بررسی شد</span>
+          <h2>مربی فعالیتت را بررسی کرد.</h2>
         </div>
-        <div class="neuron-award"><b>+۴۵</b><span>نورون</span></div>
+        <div class="neuron-award"><b>+۱۵</b><span>نورون دریافت‌شده</span></div>
       </div>
       <div class="review-result-grid">
         <div>
           <span>نظر مربی</span>
-          <p>ایده‌ات را خوب توضیح داده‌ای. در فعالیت بعدی، سعی کن دلیل انتخابت را با یک مثال واقعی کامل‌تر کنی.</p>
+          <p>آفرین! ایده‌ات را خوب توضیح داده‌ای. در فعالیت بعدی، سعی کن دلیل انتخابت را با یک مثال واقعی کامل‌تر کنی.</p>
         </div>
         <div>
           <span>وضعیت</span>
-          <strong class="status-chip status-chip--done">تأیید و امتیازدهی شد</strong>
-          <small>امتیاز این فعالیت به مجموع نورون‌های تو اضافه شده است.</small>
+          <strong class="status-chip status-chip--done">بررسی و امتیازدهی شد</strong>
+          <small>۱۵ نورون برای این فعالیت به حسابت اضافه شد.</small>
         </div>
       </div>
       <a class="btn btn-primary" href="support-student.html">پاسخ یا سؤال درباره این بررسی ←</a>
@@ -478,6 +517,188 @@
 
     const lessonChecked = document.getElementById('lessonChecked');
     const lessonActivity = document.getElementById('lessonActivity');
+
+    const videoPlayer = document.querySelector('.lesson-video-player');
+    const lessonVideo = videoPlayer?.querySelector('.lesson-video-native');
+    const videoPlayButtons = videoPlayer?.querySelectorAll('.lesson-video-play, .lesson-video-center-play');
+    const videoSeek = videoPlayer?.querySelector('.lesson-video-seek');
+    const videoCurrent = videoPlayer?.querySelector('.lesson-video-current');
+    const videoDuration = videoPlayer?.querySelector('.lesson-video-duration');
+    const videoStatus = videoPlayer?.querySelector('.lesson-video-status');
+    const videoMute = videoPlayer?.querySelector('.lesson-video-mute');
+    const videoVolume = videoPlayer?.querySelector('.lesson-video-volume');
+    const videoFullscreen = videoPlayer?.querySelector('.lesson-video-fullscreen');
+
+    if (videoPlayer && lessonVideo && videoPlayButtons && videoSeek && videoCurrent && videoDuration) {
+      const toPersianVideoDigits = value => String(value).replace(/[0-9]/g, digit => '۰۱۲۳۴۵۶۷۸۹'[digit]);
+      const formatVideoTime = seconds => {
+        if (!Number.isFinite(seconds)) return '۰:۰۰';
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+        const time = hours ? `${hours}:${minutes.toString().padStart(2, '0')}:${remainingSeconds}` : `${minutes}:${remainingSeconds}`;
+        return toPersianVideoDigits(time);
+      };
+      const updateVideoProgress = () => {
+        const duration = lessonVideo.duration;
+        const progress = Number.isFinite(duration) && duration > 0 ? lessonVideo.currentTime / duration : 0;
+        videoSeek.value = String(Math.round(progress * Number(videoSeek.max)));
+        videoSeek.style.setProperty('--video-progress', `${progress * 100}%`);
+        videoSeek.setAttribute('aria-valuetext', `${formatVideoTime(lessonVideo.currentTime)} از ${formatVideoTime(duration)}`);
+        videoCurrent.textContent = formatVideoTime(lessonVideo.currentTime);
+        videoDuration.textContent = formatVideoTime(duration);
+      };
+      const toggleVideoPlayback = async () => {
+        if (lessonVideo.paused || lessonVideo.ended) {
+          try {
+            await lessonVideo.play();
+          } catch {
+            videoStatus.textContent = 'پخش ویدئو ممکن نشد؛ فایل را بررسی و دوباره تلاش کن.';
+          }
+        } else {
+          lessonVideo.pause();
+        }
+      };
+
+      lessonVideo.controls = false;
+      videoPlayer.classList.add('is-custom');
+      updateVideoProgress();
+      videoPlayButtons.forEach(button => button.addEventListener('click', event => {
+        event.stopPropagation();
+        toggleVideoPlayback();
+      }));
+      lessonVideo.addEventListener('click', toggleVideoPlayback);
+      lessonVideo.addEventListener('play', () => {
+        videoPlayer.classList.add('is-playing');
+        videoPlayButtons.forEach(button => {
+          button.setAttribute('aria-label', 'توقف موقت ویدئو');
+          button.setAttribute('aria-pressed', 'true');
+        });
+        videoStatus.textContent = '';
+      });
+      lessonVideo.addEventListener('pause', () => {
+        videoPlayer.classList.remove('is-playing');
+        videoPlayButtons.forEach(button => {
+          button.setAttribute('aria-label', 'ادامه‌ی پخش ویدئو');
+          button.setAttribute('aria-pressed', 'false');
+        });
+        if (!lessonVideo.ended && !lessonVideo.error) videoStatus.textContent = 'ویدئو متوقف شد';
+      });
+      lessonVideo.addEventListener('ended', () => {
+        videoStatus.textContent = 'ویدئو به پایان رسید';
+      });
+      lessonVideo.addEventListener('loadedmetadata', updateVideoProgress);
+      lessonVideo.addEventListener('durationchange', updateVideoProgress);
+      lessonVideo.addEventListener('timeupdate', updateVideoProgress);
+      lessonVideo.addEventListener('error', () => {
+        videoStatus.textContent = 'بارگذاری ویدئو ممکن نشد؛ صفحه را تازه‌سازی کن و دوباره تلاش کن.';
+      });
+      videoSeek.addEventListener('input', () => {
+        if (!Number.isFinite(lessonVideo.duration) || lessonVideo.duration <= 0) return;
+        lessonVideo.currentTime = (Number(videoSeek.value) / Number(videoSeek.max)) * lessonVideo.duration;
+        updateVideoProgress();
+      });
+      videoMute?.addEventListener('click', () => {
+        lessonVideo.muted = !lessonVideo.muted;
+        videoMute.classList.toggle('is-muted', lessonVideo.muted);
+        videoMute.setAttribute('aria-pressed', String(lessonVideo.muted));
+        videoMute.setAttribute('aria-label', lessonVideo.muted ? 'فعال کردن صدا' : 'بی‌صدا کردن ویدئو');
+      });
+      videoVolume?.addEventListener('input', () => {
+        lessonVideo.volume = Number(videoVolume.value);
+        lessonVideo.muted = lessonVideo.volume === 0;
+        videoMute?.classList.toggle('is-muted', lessonVideo.muted);
+        videoMute?.setAttribute('aria-pressed', String(lessonVideo.muted));
+      });
+      videoFullscreen?.addEventListener('click', () => {
+        if (document.fullscreenElement) document.exitFullscreen?.();
+        else if (videoPlayer.requestFullscreen) videoPlayer.requestFullscreen();
+        else lessonVideo.webkitEnterFullscreen?.();
+      });
+    }
+
+    const audioPlayer = document.querySelector('.lesson-audio-player');
+    const lessonAudio = audioPlayer?.querySelector('.lesson-audio-native');
+    const audioPlayButton = audioPlayer?.querySelector('.lesson-audio-play');
+    const audioWave = audioPlayer?.querySelector('.lesson-audio-wave');
+    const audioSeek = audioPlayer?.querySelector('.lesson-audio-seek');
+    const audioCurrent = audioPlayer?.querySelector('.lesson-audio-current');
+    const audioDuration = audioPlayer?.querySelector('.lesson-audio-duration');
+    const audioStatus = audioPlayer?.querySelector('.lesson-audio-status');
+
+    if (audioPlayer && lessonAudio && audioPlayButton && audioWave && audioSeek) {
+      const toPersianDigits = value => String(value).replace(/[0-9]/g, digit => '۰۱۲۳۴۵۶۷۸۹'[digit]);
+      const formatAudioTime = seconds => {
+        if (!Number.isFinite(seconds)) return '۰:۰۰';
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+        return toPersianDigits(`${minutes}:${remainingSeconds}`);
+      };
+      const updateAudioProgress = () => {
+        const duration = lessonAudio.duration;
+        const progress = Number.isFinite(duration) && duration > 0 ? lessonAudio.currentTime / duration : 0;
+        audioSeek.value = String(Math.round(progress * Number(audioSeek.max)));
+        audioSeek.setAttribute('aria-valuetext', `${formatAudioTime(lessonAudio.currentTime)} از ${formatAudioTime(duration)}`);
+        audioCurrent.textContent = formatAudioTime(lessonAudio.currentTime);
+        audioDuration.textContent = formatAudioTime(duration);
+        const playedBars = Math.floor(progress * audioWave.children.length);
+        [...audioWave.children].forEach((bar, index) => {
+          bar.classList.toggle('is-played', index < playedBars);
+          bar.classList.toggle('is-current', index === playedBars && playedBars < audioWave.children.length);
+          bar.classList.toggle('is-upcoming', index > playedBars);
+        });
+      };
+
+      const barCount = 56;
+      for (let index = 0; index < barCount; index += 1) {
+        const bar = document.createElement('i');
+        const contour = Math.abs(Math.sin(index * 0.43) * Math.cos(index * 0.17));
+        const variation = ((index * 37) % 19) / 100;
+        bar.style.setProperty('--bar-height', `${Math.round(18 + contour * 62 + variation * 100)}%`);
+        audioWave.appendChild(bar);
+      }
+      lessonAudio.controls = false;
+      audioPlayer.classList.add('is-custom');
+      updateAudioProgress();
+      audioPlayButton.addEventListener('click', async () => {
+        if (lessonAudio.paused) {
+          try {
+            await lessonAudio.play();
+          } catch {
+            audioStatus.textContent = 'پخش صوت ممکن نشد؛ دوباره تلاش کن.';
+          }
+        } else {
+          lessonAudio.pause();
+        }
+      });
+      lessonAudio.addEventListener('play', () => {
+        audioPlayer.classList.add('is-playing');
+        audioPlayButton.setAttribute('aria-label', 'توقف موقت صوت');
+        audioPlayButton.setAttribute('aria-pressed', 'true');
+        audioStatus.textContent = 'در حال پخش';
+      });
+      lessonAudio.addEventListener('pause', () => {
+        audioPlayer.classList.remove('is-playing');
+        audioPlayButton.setAttribute('aria-label', 'ادامه‌ی پخش صوت');
+        audioPlayButton.setAttribute('aria-pressed', 'false');
+        if (!lessonAudio.ended && !lessonAudio.error) audioStatus.textContent = 'پخش متوقف شد';
+      });
+      lessonAudio.addEventListener('ended', () => {
+        audioStatus.textContent = 'قصه به پایان رسید';
+        lessonAudio.currentTime = 0;
+      });
+      lessonAudio.addEventListener('loadedmetadata', updateAudioProgress);
+      lessonAudio.addEventListener('durationchange', updateAudioProgress);
+      lessonAudio.addEventListener('timeupdate', updateAudioProgress);
+      lessonAudio.addEventListener('error', () => {
+        audioStatus.textContent = 'فایل صوتی بارگذاری نشد. صفحه را تازه‌سازی کن و دوباره امتحان کن.';
+      });
+      audioSeek.addEventListener('input', () => {
+        if (!Number.isFinite(lessonAudio.duration) || lessonAudio.duration <= 0) return;
+        lessonAudio.currentTime = (Number(audioSeek.value) / Number(audioSeek.max)) * lessonAudio.duration;
+        updateAudioProgress();
+      });
+    }
 
     lessonChecked.addEventListener('click', () => {
       lessonActivity.classList.add('is-visible');
